@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bg">#1A1B22</color>
+    <color name="surface">#2D333B</color>
+    <!-- Lighter than cards so the floating bar stays distinct over scrolling content. -->
+    <color name="nav_bg">#3A424D</color>
+    <color name="field_bg">#22262E</color>
+    <color name="accent_soft">#2F3956</color>
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_muted">#B8BFCC</color>
+    <color name="outline">#3D444E</color>
+
+    <color name="status_ok">#66BB6A</color>
+    <color name="status_wait">#FFCA28</color>
+    <color name="status_bad">#EF5350</color>
+
+    <color name="icon_bg">#0E0E0F</color>
+    <color name="icon_tile">#F5F5F4</color>
+    <color name="icon_mark">#111111</color>
+</resources>

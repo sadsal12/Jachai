@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- One numbered "how it works" step: a circle on a thin line, so the steps read as a sequence.
+     baselineAligned=false: otherwise multi-line text is pushed down to the number's baseline and clips. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:baselineAligned="false"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="40dp"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/step_number"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/bg_circle"
+            android:backgroundTint="@color/accent"
+            android:gravity="center"
+            android:importantForAccessibility="no"
+            android:textColor="@color/on_accent"
+            android:textSize="19sp"
+            android:textStyle="bold" />
+
+        <View
+            android:id="@+id/step_line"
+            android:layout_width="3dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:layout_weight="1"
+            android:background="@color/accent_soft"
+            android:minHeight="12dp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/step_text"
+        style="@style/Text.Body"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_weight="1"
+        android:minHeight="40dp"
+        android:paddingTop="7dp"
+        android:paddingBottom="20dp" />
+</LinearLayout>

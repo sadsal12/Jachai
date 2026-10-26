@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Verdict hero; tinted red/green/grey from code. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <corners
+        android:bottomLeftRadius="36dp"
+        android:bottomRightRadius="36dp" />
+    <solid android:color="#FFFFFFFF" />
+</shape>

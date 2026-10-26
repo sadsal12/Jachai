@@ -6,9 +6,12 @@
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PROJECTION" />
+    <!-- "Vibrate when AI or fake is detected" setting. -->
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <!-- usesCleartextTraffic: allows http:// LAN URLs while testing. The demo build should use the HTTPS URL. -->
     <application
+        android:name=".JachaiApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:roundIcon="@mipmap/ic_launcher"
@@ -28,6 +31,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".SettingsActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
 
         <!-- The share-sheet entry point. configChanges keeps an in-flight check alive across rotation. -->
         <activity

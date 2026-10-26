@@ -6,3 +6,13 @@ __pycache__/
 .hf-cache/
 # Shareable APKs are published as release files, not committed
 dist/
+
+# OS and editor clutter
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+*.log
+
+# Design kit renders: regenerate with `python design/build_kit.py` + the logo-design render script
+design/app-kit/previews/

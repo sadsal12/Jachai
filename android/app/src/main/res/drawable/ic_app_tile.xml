@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Jachai app icon (B3): tile with a j; the dot floats in a bite cut out of the corner.
+     Same geometry as design/app-kit; the bite is a real cut, so it works on any background. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="256"
+    android:viewportHeight="256">
+    <path android:fillColor="@color/icon_tile" android:pathData="M76,16H166.4A50,50 0 1,0 234.99,51.99A60,60 0 0,1 240,76V180A60,60 0 0,1 180,240H76A60,60 0 0,1 16,180V76A60,60 0 0,1 76,16Z" />
+    <path android:fillColor="@color/icon_tile" android:pathData="M156,62a30,30 0 1,0 60,0a30,30 0 1,0 -60,0" />
+    <path android:strokeColor="@color/icon_mark" android:strokeWidth="36" android:strokeLineCap="round"
+        android:pathData="M140,128V164A42,42 0 0,1 98,206H92" />
+</vector>

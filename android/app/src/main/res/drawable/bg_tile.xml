@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Tappable card: the border turns accent while pressed. -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <shape>
+            <corners android:radius="24dp" />
+            <solid android:color="@color/accent_soft" />
+            <stroke android:width="2dp" android:color="@color/accent" />
+        </shape>
+    </item>
+    <item>
+        <shape>
+            <corners android:radius="24dp" />
+            <solid android:color="@color/surface" />
+            <stroke android:width="1dp" android:color="@color/outline" />
+        </shape>
+    </item>
+</selector>

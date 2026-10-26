@@ -1,125 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/scroll"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true">
+    android:background="@color/bg">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="24dp">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
+        <!-- Header: app name + settings -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/page_padding"
+            android:paddingTop="12dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="8dp">
+
+            <ImageView
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:importantForAccessibility="no"
+                android:src="@drawable/ic_app_tile" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
                 android:layout_weight="1"
-                android:text="@string/home_title"
-                android:textAppearance="?attr/textAppearanceHeadlineMedium"
+                android:text="@string/app_name"
+                android:textColor="@color/text_primary"
+                android:textSize="26sp"
                 android:textStyle="bold" />
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_language"
-                style="@style/Widget.Material3.Button.TextButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/btn_language" />
+            <ImageButton
+                android:id="@+id/btn_settings"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:background="@drawable/bg_header_btn"
+                android:contentDescription="@string/settings_title"
+                android:padding="14dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_settings"
+                app:tint="@color/text_primary" />
         </LinearLayout>
 
-        <TextView
+        <FrameLayout
+            android:id="@+id/pages"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="@string/home_subtitle"
-            android:textAppearance="?attr/textAppearanceBodyLarge" />
+            android:layout_height="0dp"
+            android:layout_weight="1">
 
-        <!-- Check text -->
-        <TextView
-            style="@style/SectionHeader"
-            android:text="@string/section_text" />
+            <include
+                android:id="@+id/page_text"
+                layout="@layout/page_text" />
 
-        <EditText
-            android:id="@+id/claim_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="top"
-            android:hint="@string/claim_hint"
-            android:importantForAutofill="no"
-            android:inputType="textMultiLine"
-            android:minLines="3" />
+            <include
+                android:id="@+id/page_media"
+                layout="@layout/page_media"
+                android:visibility="gone" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_check_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="@string/btn_check_text" />
+            <include
+                android:id="@+id/page_bubble"
+                layout="@layout/page_bubble"
+                android:visibility="gone" />
 
-        <!-- Check media -->
-        <TextView
-            style="@style/SectionHeader"
-            android:text="@string/section_media" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_pick_media"
-            style="@style/Widget.Material3.Button.TonalButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/btn_pick_media" />
-
-        <!-- Floating bubble -->
-        <TextView
-            style="@style/SectionHeader"
-            android:text="@string/section_bubble" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/bubble_explainer"
-            android:textAppearance="?attr/textAppearanceBodyMedium" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_bubble"
-            style="@style/Widget.Material3.Button.TonalButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="@string/btn_bubble_start" />
-
-        <!-- Server -->
-        <TextView
-            style="@style/SectionHeader"
-            android:text="@string/section_server" />
-
-        <EditText
-            android:id="@+id/server_url"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/server_url_hint"
-            android:importantForAutofill="no"
-            android:inputType="textUri"
-            android:singleLine="true" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_save_server"
-            style="@style/Widget.Material3.Button.OutlinedButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:text="@string/btn_save_server" />
-
-        <TextView
-            android:id="@+id/server_status"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:textAppearance="?attr/textAppearanceBodyMedium" />
+            <include
+                android:id="@+id/page_profile"
+                layout="@layout/page_profile"
+                android:visibility="gone" />
+        </FrameLayout>
     </LinearLayout>
-</ScrollView>
+
+    <com.jachai.app.ui.FloatingNavBar
+        android:id="@+id/nav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="14dp" />
+</FrameLayout>

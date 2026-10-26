@@ -1,0 +1,22 @@
+/* Jachai app UI asset kit: shared colour tokens.
+   Every SVG in this kit embeds the same variables, so the files stay self-contained;
+   change a value here and mirror it in the SVG <style> blocks (or inline this file). */
+
+:root {
+  --primary:   #111111; /* ink: the tile, the j, headlines */
+  --secondary: #F2F2F0; /* soft paper grey: cards, header canvas, pattern */
+  --bg:        #FFFFFF; /* page */
+  --accent:    #8CA8F9; /* the one pop: B2's speech-dot only. Set to var(--primary) for strict monochrome */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary:   #F5F5F4;
+    --secondary: #1C1C1E;
+    --bg:        #0E0E0F;
+    --accent:    #8CA8F9;
+  }
+}
+
+/* Android: VectorDrawable can't read CSS variables. When importing an SVG into Android Studio,
+   replace var(--primary) etc. with the hex values above (the colours.xml names map 1:1). */

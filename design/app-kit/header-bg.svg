@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 480" width="1440" height="480" preserveAspectRatio="xMidYMin slice">
+  <style>svg{--primary:#111111;--secondary:#F2F2F0;--bg:#FFFFFF;--accent:#8CA8F9}@media (prefers-color-scheme:dark){svg{--primary:#F5F5F4;--secondary:#1C1C1E;--bg:#0E0E0F;--accent:#8CA8F9}}svg.dark{--primary:#F5F5F4;--secondary:#1C1C1E;--bg:#0E0E0F;--accent:#8CA8F9}</style>
+  <!-- Feature header canvas for dashboards (e.g. the top of the Text tab). Subtle on purpose: content sits on top.
+       'xMidYMin slice' keeps the top band on narrow phones. -->
+  <defs>
+    <linearGradient id="fadeDown" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" style="stop-color:var(--secondary)"/>
+      <stop offset="1" style="stop-color:var(--bg)"/>
+    </linearGradient>
+    <pattern id="dots" width="32" height="32" patternUnits="userSpaceOnUse">
+      <circle cx="16" cy="16" r="2" style="fill:var(--primary)"/></pattern>
+    <linearGradient id="dotFade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff" stop-opacity="1"/><stop offset="0.8" stop-color="#fff" stop-opacity="0"/></linearGradient>
+    <mask id="dotMask" maskUnits="userSpaceOnUse" x="0" y="0" width="1440" height="480">
+      <rect width="1440" height="480" fill="url(#dotFade)"/></mask>
+  </defs>
+
+  <!-- Layer 1: canvas fading into the page colour, so the header has no hard bottom edge -->
+  <rect width="1440" height="480" fill="url(#fadeDown)"/>
+
+  <!-- Layer 2: dot grid, fading downwards -->
+  <rect width="1440" height="480" fill="url(#dots)" mask="url(#dotMask)" opacity="0.07"/>
+
+  <!-- Layer 3: pills and bubbles from the j's vocabulary (round ends only, nothing sharp) -->
+  <g opacity="0.07" style="fill:var(--primary)">
+    <rect x="980" y="-40" width="80" height="300" rx="40"/>
+    <circle cx="1180" cy="70" r="56"/>
+    <rect x="1240" y="150" width="80" height="220" rx="40"/>
+    <circle cx="1360" cy="40" r="28"/>
+  </g>
+  <circle cx="1180" cy="70" r="88" fill="none" stroke-width="3" opacity="0.10" style="stroke:var(--primary)"/>
+  <circle cx="1180" cy="70" r="124" fill="none" stroke-width="2" opacity="0.06" style="stroke:var(--primary)"/>
+
+  <!-- Text Safe Zone: x 48-900, y 40-300 (title, greeting, stats). The shapes stay right of x 960. -->
+  <!-- <rect x="48" y="40" width="852" height="260" fill="none" stroke="#f0f" stroke-dasharray="12 8"/> -->
+</svg>

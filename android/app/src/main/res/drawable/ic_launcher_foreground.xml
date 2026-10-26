@@ -1,17 +1,18 @@
-<!-- Shield + check. Drawn inside the 66dp adaptive-icon safe zone of a 108dp canvas. -->
+<?xml version="1.0" encoding="utf-8"?>
+<!-- B3 tile inside the 66dp adaptive-icon safe zone of a 108dp canvas, so round masks never cut the dot. -->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:width="108dp"
     android:height="108dp"
     android:viewportWidth="108"
     android:viewportHeight="108">
-    <path
-        android:fillColor="#FFFFFFFF"
-        android:pathData="M54,28L76,36L76,54C76,68 66,78 54,82C42,78 32,68 32,54L32,36Z" />
-    <path
-        android:fillColor="#00000000"
-        android:pathData="M44,55L51,62L65,47"
-        android:strokeWidth="5"
-        android:strokeColor="#FF1E8449"
-        android:strokeLineCap="round"
-        android:strokeLineJoin="round" />
+    <group
+        android:scaleX="0.247"
+        android:scaleY="0.247"
+        android:translateX="22.384"
+        android:translateY="22.384">
+        <path android:fillColor="@color/icon_tile" android:pathData="M76,16H166.4A50,50 0 1,0 234.99,51.99A60,60 0 0,1 240,76V180A60,60 0 0,1 180,240H76A60,60 0 0,1 16,180V76A60,60 0 0,1 76,16Z" />
+        <path android:fillColor="@color/icon_tile" android:pathData="M156,62a30,30 0 1,0 60,0a30,30 0 1,0 -60,0" />
+        <path android:strokeColor="@color/icon_mark" android:strokeWidth="36" android:strokeLineCap="round"
+            android:pathData="M140,128V164A42,42 0 0,1 98,206H92" />
+    </group>
 </vector>

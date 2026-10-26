@@ -1,20 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Light mode. Dark mode overrides the colour roles in values-night/themes.xml. -->
-    <style name="Theme.Jachai" parent="Base.Theme.Jachai">
-        <item name="colorPrimary">@color/brand</item>
-        <item name="colorOnPrimary">#FFFFFFFF</item>
-        <item name="colorSecondaryContainer">#D6E6F2</item>
-        <item name="colorOnSecondaryContainer">@color/brand</item>
+    <!-- One theme for both modes: the colour roles point at resources that values-night/colors.xml overrides. -->
+    <style name="Theme.Jachai" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/accent</item>
+        <item name="colorOnPrimary">@color/on_accent</item>
+        <item name="colorPrimaryContainer">@color/accent_soft</item>
+        <item name="colorOnPrimaryContainer">@color/text_primary</item>
+        <item name="colorSecondary">@color/accent</item>
+        <item name="colorOnSecondary">@color/on_accent</item>
+        <item name="colorSecondaryContainer">@color/accent_soft</item>
+        <item name="colorOnSecondaryContainer">@color/text_primary</item>
+        <item name="colorSurface">@color/surface</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="colorOnSurfaceVariant">@color/text_muted</item>
+        <item name="colorOutline">@color/outline</item>
+        <item name="android:colorBackground">@color/bg</item>
+        <item name="android:windowBackground">@color/bg</item>
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="android:textColorSecondary">@color/text_muted</item>
+        <item name="android:textColorHint">@color/text_muted</item>
+        <item name="materialButtonStyle">@style/Button.Primary</item>
     </style>
 
-    <style name="Base.Theme.Jachai" parent="Theme.Material3.DayNight.NoActionBar">
-        <item name="colorSecondary">@color/brand_accent</item>
-    </style>
-
-    <!-- Launcher splash: brand colour + shield icon, then hands over to the normal theme. -->
+    <!-- Launcher splash: charcoal + shield icon, then hands over to the normal theme. -->
     <style name="Theme.Jachai.Starting" parent="Theme.SplashScreen">
-        <item name="windowSplashScreenBackground">@color/brand</item>
+        <item name="windowSplashScreenBackground">@color/icon_bg</item>
         <item name="windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
         <item name="postSplashScreenTheme">@style/Theme.Jachai</item>
     </style>

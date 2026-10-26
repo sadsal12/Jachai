@@ -13,3 +13,5 @@ captures/
 .cxx/
 *.apk
 *.aab
+# Written by Android Studio's Gradle on this PC (pins the daemon to JDK 25); not a project setting
+gradle/gradle-daemon-jvm.properties

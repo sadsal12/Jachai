@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/Page">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/page_padding"
+        android:paddingTop="8dp"
+        android:paddingEnd="@dimen/page_padding">
+
+        <!-- Who: a compact row until accounts exist -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <FrameLayout
+                android:id="@+id/avatar"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:clickable="true"
+                android:contentDescription="@string/cd_change_photo"
+                android:focusable="true">
+
+                <ImageView
+                    android:layout_width="74dp"
+                    android:layout_height="74dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/bg_circle"
+                    android:backgroundTint="@color/accent_soft"
+                    android:importantForAccessibility="no"
+                    android:padding="17dp"
+                    android:src="@drawable/ic_person"
+                    app:tint="@color/text_muted" />
+
+                <ImageView
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_gravity="bottom|end"
+                    android:background="@drawable/bg_circle"
+                    android:backgroundTint="@color/accent"
+                    android:importantForAccessibility="no"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_add"
+                    app:tint="@color/on_accent" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/profile_guest"
+                    android:textColor="@color/text_primary"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:background="@drawable/bg_pill"
+                    android:paddingStart="12dp"
+                    android:paddingTop="4dp"
+                    android:paddingEnd="12dp"
+                    android:paddingBottom="4dp"
+                    android:text="@string/profile_coming_soon"
+                    android:textColor="@color/text_muted"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Before the first check: one friendly card instead of rows of zeros -->
+        <LinearLayout
+            android:id="@+id/profile_empty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/bg_card_soft"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="24dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:background="@drawable/bg_circle"
+                android:backgroundTint="@color/surface"
+                android:importantForAccessibility="no"
+                android:padding="16dp"
+                android:src="@drawable/ic_history" />
+
+            <TextView
+                style="@style/Text.Heading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:text="@string/profile_empty_title" />
+
+            <TextView
+                style="@style/Text.Body"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:gravity="center"
+                android:text="@string/profile_empty_body" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_first_check"
+                style="@style/Button.Primary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:text="@string/btn_first_check"
+                app:icon="@drawable/ic_shield_check" />
+        </LinearLayout>
+
+        <!-- Stats: counted on this phone only -->
+        <LinearLayout
+            android:id="@+id/stats_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/Text.Section"
+                android:accessibilityHeading="true"
+                android:text="@string/profile_activity" />
+
+            <LinearLayout style="@style/Card">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:baselineAligned="true"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/stat_checks"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/text_primary"
+                        android:textSize="48sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        style="@style/Text.Muted"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_weight="1"
+                        android:text="@string/stat_checks"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <!-- Fake vs real, as one bar -->
+                <LinearLayout
+                    android:id="@+id/split_bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="16dp"
+                    android:layout_marginTop="14dp"
+                    android:background="@drawable/bg_track"
+                    android:importantForAccessibility="no"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:id="@+id/split_fake"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/verdict_red" />
+
+                    <View
+                        android:id="@+id/split_real"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/verdict_green" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <View
+                                android:layout_width="12dp"
+                                android:layout_height="12dp"
+                                android:background="@drawable/bg_circle"
+                                android:backgroundTint="@color/verdict_red" />
+
+                            <TextView
+                                android:id="@+id/stat_fakes"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:textColor="@color/text_primary"
+                                android:textSize="28sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <TextView
+                            style="@style/Text.Muted"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/stat_fakes" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <View
+                                android:layout_width="12dp"
+                                android:layout_height="12dp"
+                                android:background="@drawable/bg_circle"
+                                android:backgroundTint="@color/verdict_green" />
+
+                            <TextView
+                                android:id="@+id/stat_real"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:textColor="@color/text_primary"
+                                android:textSize="28sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <TextView
+                            style="@style/Text.Muted"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/stat_real" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                style="@style/Text.Section"
+                android:accessibilityHeading="true"
+                android:text="@string/profile_week" />
+
+            <LinearLayout
+                style="@style/Card"
+                android:paddingTop="16dp"
+                android:paddingBottom="12dp">
+
+                <com.jachai.app.ui.WeekBars
+                    android:id="@+id/week_bars"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <TextView
+                style="@style/Text.Section"
+                android:accessibilityHeading="true"
+                android:text="@string/profile_recent" />
+
+            <LinearLayout
+                style="@style/Card"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp">
+
+                <LinearLayout
+                    android:id="@+id/recent_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" />
+
+                <TextView
+                    android:id="@+id/recent_empty"
+                    style="@style/Text.Muted"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="48dp"
+                    android:gravity="center_vertical"
+                    android:text="@string/recent_empty" />
+            </LinearLayout>
+
+            <TextView
+                style="@style/Text.Muted"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/stats_private"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <!-- The one place the app suggests sharing itself -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/bg_card_soft"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                style="@style/Text.Heading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/share_card_title" />
+
+            <TextView
+                style="@style/Text.Body"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="@string/share_card_body" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_share_app"
+                style="@style/Button.Secondary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:paddingStart="22dp"
+                android:paddingEnd="24dp"
+                android:text="@string/btn_share_app"
+                app:icon="@drawable/ic_share" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

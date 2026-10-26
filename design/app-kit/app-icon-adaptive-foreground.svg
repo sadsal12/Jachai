@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108" width="432" height="432">
+  <style>svg{--primary:#111111;--secondary:#F2F2F0;--bg:#FFFFFF;--accent:#8CA8F9}</style>
+  <!-- Android adaptive icon foreground, 108 x 108 dp. Safe zone = 66 dp circle; the mark fits inside it. -->
+  <!-- <circle cx="54" cy="54" r="33" fill="none" stroke="red" stroke-width="0.5"/>  Safe zone guide -->
+  <g transform="translate(54 54) scale(0.247) translate(-128 -128)">
+      <defs><mask id="bite" maskUnits="userSpaceOnUse" x="0" y="0" width="256" height="256">
+        <rect width="256" height="256" fill="#fff"/><circle cx="186" cy="62" r="50" fill="#000"/></mask></defs>
+      <rect x="16" y="16" width="224" height="224" rx="60" mask="url(#bite)" style="fill:var(--primary)"/>
+      <!-- The floating dot: sits in a bite outside the tile, like Jachai's bubble over other apps -->
+      <circle cx="186" cy="62" r="30" style="fill:var(--primary)"/>
+      <path d="M140 128V164A42 42 0 0 1 98 206H92" fill="none" stroke-width="36" stroke-linecap="round" style="stroke:var(--bg)"/>
+  </g>
+</svg>

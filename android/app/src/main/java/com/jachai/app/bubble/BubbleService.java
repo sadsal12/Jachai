@@ -159,7 +159,7 @@ public class BubbleService extends Service {
         PendingIntent stop = PendingIntent.getService(this, 0,
                 new Intent(this, BubbleService.class).setAction(ACTION_STOP), PendingIntent.FLAG_IMMUTABLE);
         Notification notification = new NotificationCompat.Builder(this, CHANNEL_ID)
-                .setSmallIcon(R.drawable.ic_launcher_foreground)
+                .setSmallIcon(R.drawable.ic_launcher_monochrome)
                 .setContentTitle(getString(R.string.bubble_notification_title))
                 .setContentText(getString(R.string.bubble_notification_text))
                 .addAction(0, getString(R.string.bubble_stop), stop)
@@ -212,8 +212,10 @@ public class BubbleService extends Service {
     @SuppressLint("ClickableViewAccessibility")
     private void showBubble() {
         bubble = new ImageView(this);
-        bubble.setImageResource(R.drawable.ic_launcher_foreground);
+        bubble.setImageResource(R.drawable.ic_app_tile);
         bubble.setBackgroundResource(R.drawable.bubble_bg);
+        int pad = Math.round(7 * getResources().getDisplayMetrics().density);
+        bubble.setPadding(pad, pad, pad, pad);
         bubble.setElevation(8 * getResources().getDisplayMetrics().density);
         bubble.setContentDescription(getString(R.string.bubble_notification_text));
 
@@ -283,7 +285,7 @@ public class BubbleService extends Service {
             synchronized (frameLock) {
                 if (latestFrame != null) {
                     try {
-                        file = saveJpeg(toBitmap(latestFrame));
+                        file = saveJpeg(withoutSystemBars(toBitmap(latestFrame)));
                     } catch (IOException | RuntimeException ignored) {
                         file = null;
                     } finally {
@@ -315,6 +317,22 @@ public class BubbleService extends Service {
         Bitmap exact = Bitmap.createBitmap(padded, 0, 0, width, height);
         if (exact != padded) padded.recycle();
         return exact;
+    }
+
+    /** The status bar (clock, battery) and nav bar are just noise for OCR: send only the app content. */
+    private Bitmap withoutSystemBars(Bitmap full) {
+        int top = systemDimen("status_bar_height"), bottom = systemDimen("navigation_bar_height");
+        int height = full.getHeight() - top - bottom;
+        if (height < full.getHeight() / 2) return full;  // odd values: keep the whole frame
+        Bitmap cropped = Bitmap.createBitmap(full, 0, top, full.getWidth(), height);
+        if (cropped != full) full.recycle();
+        return cropped;
+    }
+
+    private int systemDimen(String name) {
+        @SuppressLint("DiscouragedApi")
+        int id = getResources().getIdentifier(name, "dimen", "android");
+        return id > 0 ? getResources().getDimensionPixelSize(id) : 0;
     }
 
     private File saveJpeg(Bitmap bitmap) throws IOException {
