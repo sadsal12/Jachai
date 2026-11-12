@@ -1,0 +1,61 @@
+{
+  "is_enabled": true,
+  "override_active": true,
+  "schedule_start": "2026-06-10T00:00:00Z",
+  "schedule_end": "2026-06-14T23:59:59Z",
+  "admin_token": "jachai-admin-2026",
+  "project_name": "Jachai (যাচাই)",
+  "tagline": "Real-Time AI Misinformation Verification Platform for Citizens",
+  "team_name": "Team Jachai",
+  "team_members": [
+    {
+      "name": "Rumman",
+      "phonetic": "ROOM-mann",
+      "role": "Product Lead & AI Architect",
+      "email": "rumman@jachai.app",
+      "image": "/docs/team-image/rumman.jpg",
+      "bio": "Leads product strategy, YC pitch, and hybrid retrieval engine design for low-digital-literacy demographics."
+    },
+    {
+      "name": "Saleh",
+      "phonetic": "SAH-leh",
+      "role": "Full-Stack & Systems Engineer",
+      "email": "saleh@jachai.app",
+      "image": "/docs/team-image/saleh.jpg",
+      "bio": "Architect of the FastAPI inference gateway, Model Context Protocol servers, and single-container Docker runtime."
+    },
+    {
+      "name": "Anika",
+      "phonetic": "Aneeka",
+      "role": "ML & Verification Specialist",
+      "email": "anika@jachai.app",
+      "image": "/docs/team-image/anika.jpg",
+      "bio": "Engineered multilingual Bengali-English hoax vector indexing, ViT deepfake thresholds, and OCR pipelines."
+    },
+    {
+      "name": "Sami",
+      "phonetic": "SAH-mee",
+      "role": "UI/UX & Product Design Lead",
+      "email": "sami.design@jachai.app",
+      "image": "/docs/team-image/sami2.jpg",
+      "bio": "Crafted the accessible visual design system, high-contrast palette, 56dp+ touch targets, and elder-friendly UI."
+    },
+    {
+      "name": "Mirazul",
+      "phonetic": "MEE-ra-zool",
+      "role": "Mobile Android Engineer",
+      "email": "mirazul@jachai.app",
+      "image": "/docs/team-image/mirazul.jpg",
+      "bio": "Built accessible native Android UI (Java/XML), floating overlay bubble service, and screen-capture integration."
+    },
+    {
+      "name": "Sami",
+      "phonetic": "SAH-mee",
+      "role": "Strategy & Pitch Development",
+      "email": "sami.strategy@jachai.app",
+      "image": "/docs/team-image/sami.jpg",
+      "bio": "Drives civic go-to-market strategy, fact-checker newsroom partnerships, investor relations, and telecom distribution."
+    }
+  ],
+  "custom_notes": ""
+}

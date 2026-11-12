@@ -1,0 +1,61 @@
+{
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rate": "-4%",
+  "scenes": [
+    {
+      "id": "s01-cold-open",
+      "text": "It always starts with a forward that says it's urgent, and asks you to share it with everyone. And before anyone checks, it is already in every family group.",
+      "reuse": "public/vo/s01-cold-open.mp3"
+    },
+    {
+      "id": "s02-problem",
+      "text": "Rumours travel faster than the truth, and the people who receive the most forwards are often the least able to check them. With AI, a fake photo or video takes seconds to make. In twenty nineteen, a rumour just like this one led to mob attacks on innocent people."
+    },
+    {
+      "id": "s03-reveal",
+      "text": "Meet Jachai. It means: verify. Check it, before you forward it.",
+      "reuse": "public/vo/s03-reveal.mp3"
+    },
+    {
+      "id": "s04-whatsapp",
+      "text": "Here is a real forward in WhatsApp. Tap Share, choose Jachai, and in seconds, a full-screen answer. Known hoax. Very sure. And exactly what to do next: don't forward this. The phone even buzzes twice, so no one misses it.",
+      "reuse": "public/vo/s04-whatsapp.mp3"
+    },
+    {
+      "id": "s05-text",
+      "text": "Got a message you can't share? Paste it into Jachai and tap Check. Every answer comes in plain Bangla and English, with how sure it is. And when it isn't sure, it says so.",
+      "reuse": "public/vo/s05-text.mp3"
+    },
+    {
+      "id": "s06-media",
+      "text": "Photos and videos work too. An AI image classifier looks for the fingerprints of generation, and Jachai reads the text inside screenshots, in both languages.",
+      "reuse": "public/vo/s06-media.mp3"
+    },
+    {
+      "id": "s07-bubble",
+      "text": "For posts you can't share, there's the bubble. Use your phone as usual. When something feels off, tap it, and Jachai checks it for you, right inside any app."
+    },
+    {
+      "id": "s08-everyone",
+      "text": "It's built for older eyes first. Large text, big buttons, light and dark mode, Bangla and English. Simple enough for anyone.",
+      "reuse": "public/vo/s08-everyone.mp3"
+    },
+    {
+      "id": "s09-pipeline",
+      "text": "Every check runs a multi-step pipeline. Jachai works out what you sent, reads Bangla and English text, retrieves the closest match from a library of known hoaxes, scores images with a vision model, and explains the answer simply. A fallback always answers honestly."
+    },
+    {
+      "id": "s10-citizen",
+      "text": "That is what Citizen First asks for: one assistant in Bangla and English, answers grounded in checked facts, a pipeline that works inside any app, and privacy by design. No account, no identity, nothing kept."
+    },
+    {
+      "id": "s11-business",
+      "text": "The core app is free for five checks a day. The family plan is a hundred and forty-nine taka a month, or twelve hundred taka a year, for up to four phones. Guardian, at two hundred and fifty taka a month, will add alerts for the family. Next, we plan to bundle Jachai with telecom operators and mobile wallets."
+    },
+    {
+      "id": "s12-team",
+      "text": "We are team Jachai: Rumman, Saleh, Anika, Sami, Mirazul and Sami. Try it today. And next time, check it, before you forward it.",
+      "reuse": "public/vo/s12-team.mp3"
+    }
+  ]
+}

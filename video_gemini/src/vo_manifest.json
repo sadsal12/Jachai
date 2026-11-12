@@ -1,0 +1,1897 @@
+{
+  "s01-crisis": {
+    "duration": 11.4,
+    "text": "Every viral rumour begins with an urgent forward: share before anyone has time to think. In family chats across WhatsApp and Facebook, unverified claims travel faster than the truth.",
+    "words": [
+      {
+        "word": "Every",
+        "start": 0.081,
+        "duration": 0.266208
+      },
+      {
+        "word": "viral",
+        "start": 0.358791,
+        "duration": 0.405083
+      },
+      {
+        "word": "rumour",
+        "start": 0.775458,
+        "duration": 0.358791
+      },
+      {
+        "word": "begins",
+        "start": 1.145833,
+        "duration": 0.42825
+      },
+      {
+        "word": "with",
+        "start": 1.585666,
+        "duration": 0.150458
+      },
+      {
+        "word": "an",
+        "start": 1.747666,
+        "duration": 0.069458
+      },
+      {
+        "word": "urgent",
+        "start": 1.828708,
+        "duration": 0.335666
+      },
+      {
+        "word": "forward",
+        "start": 2.175916,
+        "duration": 0.497666
+      },
+      {
+        "word": "share",
+        "start": 3.206,
+        "duration": 0.405083
+      },
+      {
+        "word": "before",
+        "start": 3.622666,
+        "duration": 0.358791
+      },
+      {
+        "word": "anyone",
+        "start": 3.993041,
+        "duration": 0.335666
+      },
+      {
+        "word": "has",
+        "start": 4.340291,
+        "duration": 0.208333
+      },
+      {
+        "word": "time",
+        "start": 4.560166,
+        "duration": 0.243041
+      },
+      {
+        "word": "to",
+        "start": 4.814833,
+        "duration": 0.081
+      },
+      {
+        "word": "think",
+        "start": 4.907416,
+        "duration": 0.416666
+      },
+      {
+        "word": "In",
+        "start": 5.694458,
+        "duration": 0.092583
+      },
+      {
+        "word": "family",
+        "start": 5.798625,
+        "duration": 0.335666
+      },
+      {
+        "word": "chats",
+        "start": 6.145833,
+        "duration": 0.324083
+      },
+      {
+        "word": "across",
+        "start": 6.4815,
+        "duration": 0.335666
+      },
+      {
+        "word": "WhatsApp",
+        "start": 6.828708,
+        "duration": 0.497666
+      },
+      {
+        "word": "and",
+        "start": 7.337958,
+        "duration": 0.092583
+      },
+      {
+        "word": "Facebook",
+        "start": 7.442125,
+        "duration": 0.50925
+      },
+      {
+        "word": "unverified",
+        "start": 8.5185,
+        "duration": 0.613416
+      },
+      {
+        "word": "claims",
+        "start": 9.1435,
+        "duration": 0.347208
+      },
+      {
+        "word": "travel",
+        "start": 9.502333,
+        "duration": 0.405083
+      },
+      {
+        "word": "faster",
+        "start": 9.919,
+        "duration": 0.474541
+      },
+      {
+        "word": "than",
+        "start": 10.405083,
+        "duration": 0.11575
+      },
+      {
+        "word": "the",
+        "start": 10.532416,
+        "duration": 0.057875
+      },
+      {
+        "word": "truth",
+        "start": 10.601833,
+        "duration": 0.439833
+      }
+    ]
+  },
+  "s02-stakes": {
+    "duration": 23.568,
+    "text": "In Bangladesh, this is not just harmless noise. In twenty nineteen, false rumours about Padma Bridge provoked real panic and tragic mob violence. Today, generative AI produces synthetic images, altered voices, and deepfakes in seconds. And the most exposed are our parents and grandparents, who read best in Bangla and rarely have the tools to fact-check what they receive.",
+    "words": [
+      {
+        "word": "In",
+        "start": 0.069458,
+        "duration": 0.11575
+      },
+      {
+        "word": "BAHNG-lahdesh",
+        "start": 0.19675,
+        "duration": 1.076375
+      },
+      {
+        "word": "this",
+        "start": 1.620375,
+        "duration": 0.173625
+      },
+      {
+        "word": "is",
+        "start": 1.805541,
+        "duration": 0.092583
+      },
+      {
+        "word": "not",
+        "start": 1.909708,
+        "duration": 0.2315
+      },
+      {
+        "word": "just",
+        "start": 2.152791,
+        "duration": 0.219916
+      },
+      {
+        "word": "harmless",
+        "start": 2.38425,
+        "duration": 0.439833
+      },
+      {
+        "word": "noise",
+        "start": 2.835666,
+        "duration": 0.451375
+      },
+      {
+        "word": "In",
+        "start": 3.657416,
+        "duration": 0.069458
+      },
+      {
+        "word": "twenty",
+        "start": 3.738416,
+        "duration": 0.2315
+      },
+      {
+        "word": "nineteen",
+        "start": 3.9815,
+        "duration": 0.578708
+      },
+      {
+        "word": "false",
+        "start": 5.011583,
+        "duration": 0.370375
+      },
+      {
+        "word": "rumours",
+        "start": 5.3935,
+        "duration": 0.3125
+      },
+      {
+        "word": "about",
+        "start": 5.717583,
+        "duration": 0.254625
+      },
+      {
+        "word": "Padma",
+        "start": 5.983791,
+        "duration": 0.324083
+      },
+      {
+        "word": "Bridge",
+        "start": 6.319458,
+        "duration": 0.358791
+      },
+      {
+        "word": "provoked",
+        "start": 6.689833,
+        "duration": 0.381958
+      },
+      {
+        "word": "real",
+        "start": 7.083333,
+        "duration": 0.254625
+      },
+      {
+        "word": "panic",
+        "start": 7.349541,
+        "duration": 0.474541
+      },
+      {
+        "word": "and",
+        "start": 7.847208,
+        "duration": 0.104166
+      },
+      {
+        "word": "tragic",
+        "start": 7.962958,
+        "duration": 0.416666
+      },
+      {
+        "word": "mob",
+        "start": 8.391208,
+        "duration": 0.19675
+      },
+      {
+        "word": "violence",
+        "start": 8.599541,
+        "duration": 0.567125
+      },
+      {
+        "word": "Today",
+        "start": 9.537041,
+        "duration": 0.3935
+      },
+      {
+        "word": "generative",
+        "start": 10.358791,
+        "duration": 0.405083
+      },
+      {
+        "word": "AI",
+        "start": 10.775458,
+        "duration": 0.335666
+      },
+      {
+        "word": "produces",
+        "start": 11.122666,
+        "duration": 0.474541
+      },
+      {
+        "word": "synthetic",
+        "start": 11.608791,
+        "duration": 0.50925
+      },
+      {
+        "word": "images",
+        "start": 12.129625,
+        "duration": 0.462958
+      },
+      {
+        "word": "altered",
+        "start": 13.113416,
+        "duration": 0.324083
+      },
+      {
+        "word": "voices",
+        "start": 13.449083,
+        "duration": 0.544
+      },
+      {
+        "word": "and",
+        "start": 14.328708,
+        "duration": 0.138875
+      },
+      {
+        "word": "deepfakes",
+        "start": 14.479166,
+        "duration": 0.578708
+      },
+      {
+        "word": "in",
+        "start": 15.069458,
+        "duration": 0.150458
+      },
+      {
+        "word": "seconds",
+        "start": 15.2315,
+        "duration": 0.544
+      },
+      {
+        "word": "And",
+        "start": 16.157416,
+        "duration": 0.11575
+      },
+      {
+        "word": "the",
+        "start": 16.284708,
+        "duration": 0.057875
+      },
+      {
+        "word": "most",
+        "start": 16.354166,
+        "duration": 0.254625
+      },
+      {
+        "word": "exposed",
+        "start": 16.620375,
+        "duration": 0.532416
+      },
+      {
+        "word": "are",
+        "start": 17.164333,
+        "duration": 0.138875
+      },
+      {
+        "word": "our",
+        "start": 17.314833,
+        "duration": 0.11575
+      },
+      {
+        "word": "parents",
+        "start": 17.442125,
+        "duration": 0.405083
+      },
+      {
+        "word": "and",
+        "start": 17.858791,
+        "duration": 0.081
+      },
+      {
+        "word": "grandparents",
+        "start": 17.951375,
+        "duration": 0.717583
+      },
+      {
+        "word": "who",
+        "start": 18.935166,
+        "duration": 0.219916
+      },
+      {
+        "word": "read",
+        "start": 19.166666,
+        "duration": 0.219916
+      },
+      {
+        "word": "best",
+        "start": 19.398166,
+        "duration": 0.3125
+      },
+      {
+        "word": "in",
+        "start": 19.722208,
+        "duration": 0.127333
+      },
+      {
+        "word": "BAHNG-lah",
+        "start": 19.861125,
+        "duration": 0.752333
+      },
+      {
+        "word": "and",
+        "start": 20.625,
+        "duration": 0.150458
+      },
+      {
+        "word": "rarely",
+        "start": 20.787041,
+        "duration": 0.358791
+      },
+      {
+        "word": "have",
+        "start": 21.157416,
+        "duration": 0.185166
+      },
+      {
+        "word": "the",
+        "start": 21.354166,
+        "duration": 0.081
+      },
+      {
+        "word": "tools",
+        "start": 21.44675,
+        "duration": 0.347208
+      },
+      {
+        "word": "to",
+        "start": 21.805541,
+        "duration": 0.092583
+      },
+      {
+        "word": "fact-check",
+        "start": 21.909708,
+        "duration": 0.520833
+      },
+      {
+        "word": "what",
+        "start": 22.442125,
+        "duration": 0.127333
+      },
+      {
+        "word": "they",
+        "start": 22.581,
+        "duration": 0.11575
+      },
+      {
+        "word": "receive",
+        "start": 22.708333,
+        "duration": 0.520833
+      }
+    ]
+  },
+  "s03-intro": {
+    "duration": 17.616,
+    "text": "Traditional fact-checking demands leaving the app, searching websites, and reading long English articles. That never happens when it matters. Meet Jachai: instant, citizen-first verification built directly into Android, designed to stop misinformation at the exact moment of sharing.",
+    "words": [
+      {
+        "word": "Traditional",
+        "start": 0.081,
+        "duration": 0.451375
+      },
+      {
+        "word": "fact-checking",
+        "start": 0.544,
+        "duration": 0.555541
+      },
+      {
+        "word": "demands",
+        "start": 1.111125,
+        "duration": 0.474541
+      },
+      {
+        "word": "leaving",
+        "start": 1.597208,
+        "duration": 0.3125
+      },
+      {
+        "word": "the",
+        "start": 1.921291,
+        "duration": 0.081
+      },
+      {
+        "word": "app",
+        "start": 2.013875,
+        "duration": 0.381958
+      },
+      {
+        "word": "searching",
+        "start": 2.627333,
+        "duration": 0.405083
+      },
+      {
+        "word": "websites",
+        "start": 3.044,
+        "duration": 0.659708
+      },
+      {
+        "word": "and",
+        "start": 3.888875,
+        "duration": 0.254625
+      },
+      {
+        "word": "reading",
+        "start": 4.155083,
+        "duration": 0.324083
+      },
+      {
+        "word": "long",
+        "start": 4.49075,
+        "duration": 0.254625
+      },
+      {
+        "word": "English",
+        "start": 4.756958,
+        "duration": 0.347208
+      },
+      {
+        "word": "articles",
+        "start": 5.11575,
+        "duration": 0.567125
+      },
+      {
+        "word": "That",
+        "start": 6.041666,
+        "duration": 0.173625
+      },
+      {
+        "word": "never",
+        "start": 6.226833,
+        "duration": 0.300916
+      },
+      {
+        "word": "happens",
+        "start": 6.539333,
+        "duration": 0.50925
+      },
+      {
+        "word": "when",
+        "start": 7.060166,
+        "duration": 0.162041
+      },
+      {
+        "word": "it",
+        "start": 7.233791,
+        "duration": 0.104166
+      },
+      {
+        "word": "matters",
+        "start": 7.349541,
+        "duration": 0.567125
+      },
+      {
+        "word": "Meet",
+        "start": 8.275458,
+        "duration": 0.254625
+      },
+      {
+        "word": "JAH-chai",
+        "start": 8.541666,
+        "duration": 0.891208
+      },
+      {
+        "word": "instant",
+        "start": 10.127333,
+        "duration": 0.416666
+      },
+      {
+        "word": "citizen-first",
+        "start": 10.972208,
+        "duration": 0.613416
+      },
+      {
+        "word": "verification",
+        "start": 11.597208,
+        "duration": 0.625
+      },
+      {
+        "word": "built",
+        "start": 12.233791,
+        "duration": 0.219916
+      },
+      {
+        "word": "directly",
+        "start": 12.465291,
+        "duration": 0.439833
+      },
+      {
+        "word": "into",
+        "start": 12.916666,
+        "duration": 0.208333
+      },
+      {
+        "word": "Android",
+        "start": 13.136583,
+        "duration": 0.50925
+      },
+      {
+        "word": "designed",
+        "start": 14.166666,
+        "duration": 0.347208
+      },
+      {
+        "word": "to",
+        "start": 14.525458,
+        "duration": 0.057875
+      },
+      {
+        "word": "stop",
+        "start": 14.594916,
+        "duration": 0.335666
+      },
+      {
+        "word": "misinformation",
+        "start": 14.942125,
+        "duration": 0.82175
+      },
+      {
+        "word": "at",
+        "start": 15.775458,
+        "duration": 0.092583
+      },
+      {
+        "word": "the",
+        "start": 15.879625,
+        "duration": 0.057875
+      },
+      {
+        "word": "exact",
+        "start": 15.949083,
+        "duration": 0.439833
+      },
+      {
+        "word": "moment",
+        "start": 16.400458,
+        "duration": 0.324083
+      },
+      {
+        "word": "of",
+        "start": 16.736125,
+        "duration": 0.069458
+      },
+      {
+        "word": "sharing",
+        "start": 16.817125,
+        "duration": 0.451375
+      }
+    ]
+  },
+  "s04-share-demo": {
+    "duration": 17.496,
+    "text": "Here is a real forwarded message in WhatsApp. Tap Share, select Jachai, and within seconds, a full-screen answer appears. Known hoax. Very sure. Plain Bangla and English guidance, and an unmistakable double buzz so no one forwards it by mistake.",
+    "words": [
+      {
+        "word": "Here",
+        "start": 0.069458,
+        "duration": 0.289333
+      },
+      {
+        "word": "is",
+        "start": 0.370375,
+        "duration": 0.150458
+      },
+      {
+        "word": "a",
+        "start": 0.532416,
+        "duration": 0.057875
+      },
+      {
+        "word": "real",
+        "start": 0.601833,
+        "duration": 0.335666
+      },
+      {
+        "word": "forwarded",
+        "start": 0.949083,
+        "duration": 0.451375
+      },
+      {
+        "word": "message",
+        "start": 1.412041,
+        "duration": 0.451375
+      },
+      {
+        "word": "in",
+        "start": 1.875,
+        "duration": 0.138875
+      },
+      {
+        "word": "WhatsApp",
+        "start": 2.025458,
+        "duration": 0.578708
+      },
+      {
+        "word": "Tap",
+        "start": 2.974541,
+        "duration": 0.185166
+      },
+      {
+        "word": "Share",
+        "start": 3.171291,
+        "duration": 0.3935
+      },
+      {
+        "word": "select",
+        "start": 4.074083,
+        "duration": 0.3935
+      },
+      {
+        "word": "JAH-chai",
+        "start": 4.479166,
+        "duration": 0.949083
+      },
+      {
+        "word": "and",
+        "start": 5.844916,
+        "duration": 0.162041
+      },
+      {
+        "word": "within",
+        "start": 6.0185,
+        "duration": 0.266208
+      },
+      {
+        "word": "seconds",
+        "start": 6.296291,
+        "duration": 0.532416
+      },
+      {
+        "word": "a",
+        "start": 7.222208,
+        "duration": 0.081
+      },
+      {
+        "word": "full-screen",
+        "start": 7.314833,
+        "duration": 0.50925
+      },
+      {
+        "word": "answer",
+        "start": 7.835666,
+        "duration": 0.370375
+      },
+      {
+        "word": "appears",
+        "start": 8.217583,
+        "duration": 0.544
+      },
+      {
+        "word": "Known",
+        "start": 9.097208,
+        "duration": 0.2315
+      },
+      {
+        "word": "hoax",
+        "start": 9.340291,
+        "duration": 0.451375
+      },
+      {
+        "word": "Very",
+        "start": 10.138875,
+        "duration": 0.19675
+      },
+      {
+        "word": "sure",
+        "start": 10.347208,
+        "duration": 0.3935
+      },
+      {
+        "word": "Plain",
+        "start": 11.111125,
+        "duration": 0.347208
+      },
+      {
+        "word": "BAHNG-lah",
+        "start": 11.469916,
+        "duration": 0.891208
+      },
+      {
+        "word": "and",
+        "start": 12.372666,
+        "duration": 0.127333
+      },
+      {
+        "word": "English",
+        "start": 12.511583,
+        "duration": 0.347208
+      },
+      {
+        "word": "guidance",
+        "start": 12.870375,
+        "duration": 0.555541
+      },
+      {
+        "word": "and",
+        "start": 13.726833,
+        "duration": 0.254625
+      },
+      {
+        "word": "an",
+        "start": 13.993041,
+        "duration": 0.11575
+      },
+      {
+        "word": "unmistakable",
+        "start": 14.120375,
+        "duration": 0.659708
+      },
+      {
+        "word": "double",
+        "start": 14.791666,
+        "duration": 0.289333
+      },
+      {
+        "word": "buzz",
+        "start": 15.092583,
+        "duration": 0.266208
+      },
+      {
+        "word": "so",
+        "start": 15.370375,
+        "duration": 0.173625
+      },
+      {
+        "word": "no",
+        "start": 15.555541,
+        "duration": 0.185166
+      },
+      {
+        "word": "one",
+        "start": 15.752333,
+        "duration": 0.138875
+      },
+      {
+        "word": "forwards",
+        "start": 15.902791,
+        "duration": 0.381958
+      },
+      {
+        "word": "it",
+        "start": 16.296291,
+        "duration": 0.11575
+      },
+      {
+        "word": "by",
+        "start": 16.423625,
+        "duration": 0.127333
+      },
+      {
+        "word": "mistake",
+        "start": 16.5625,
+        "duration": 0.578708
+      }
+    ]
+  },
+  "s05-text-check": {
+    "duration": 13.416,
+    "text": "Inside the app, you can check any text directly. Paste the claim, tap Check, and Jachai matches it against a curated library of verified hoaxes. When it is uncertain, Jachai says so honestly. It never guesses.",
+    "words": [
+      {
+        "word": "Inside",
+        "start": 0.05,
+        "duration": 0.439833
+      },
+      {
+        "word": "the",
+        "start": 0.501375,
+        "duration": 0.092583
+      },
+      {
+        "word": "app",
+        "start": 0.605541,
+        "duration": 0.324083
+      },
+      {
+        "word": "you",
+        "start": 0.952791,
+        "duration": 0.104166
+      },
+      {
+        "word": "can",
+        "start": 1.0685,
+        "duration": 0.138875
+      },
+      {
+        "word": "check",
+        "start": 1.219,
+        "duration": 0.300916
+      },
+      {
+        "word": "any",
+        "start": 1.543041,
+        "duration": 0.208333
+      },
+      {
+        "word": "text",
+        "start": 1.762958,
+        "duration": 0.358791
+      },
+      {
+        "word": "directly",
+        "start": 2.133333,
+        "duration": 0.567125
+      },
+      {
+        "word": "Paste",
+        "start": 3.067125,
+        "duration": 0.300916
+      },
+      {
+        "word": "the",
+        "start": 3.379625,
+        "duration": 0.069458
+      },
+      {
+        "word": "claim",
+        "start": 3.460666,
+        "duration": 0.497666
+      },
+      {
+        "word": "tap",
+        "start": 4.085666,
+        "duration": 0.254625
+      },
+      {
+        "word": "Check",
+        "start": 4.351833,
+        "duration": 0.416666
+      },
+      {
+        "word": "and",
+        "start": 5.023166,
+        "duration": 0.208333
+      },
+      {
+        "word": "JAH-chai",
+        "start": 5.243041,
+        "duration": 0.613416
+      },
+      {
+        "word": "matches",
+        "start": 5.868041,
+        "duration": 0.405083
+      },
+      {
+        "word": "it",
+        "start": 6.284708,
+        "duration": 0.11575
+      },
+      {
+        "word": "against",
+        "start": 6.412041,
+        "duration": 0.335666
+      },
+      {
+        "word": "a",
+        "start": 6.75925,
+        "duration": 0.0462909
+      },
+      {
+        "word": "curated",
+        "start": 6.817125,
+        "duration": 0.439833
+      },
+      {
+        "word": "library",
+        "start": 7.2685,
+        "duration": 0.451375
+      },
+      {
+        "word": "of",
+        "start": 7.7315,
+        "duration": 0.069458
+      },
+      {
+        "word": "verified",
+        "start": 7.8125,
+        "duration": 0.3935
+      },
+      {
+        "word": "hoaxes",
+        "start": 8.217583,
+        "duration": 0.50925
+      },
+      {
+        "word": "When",
+        "start": 9.085666,
+        "duration": 0.11575
+      },
+      {
+        "word": "it",
+        "start": 9.212958,
+        "duration": 0.081
+      },
+      {
+        "word": "is",
+        "start": 9.305541,
+        "duration": 0.162041
+      },
+      {
+        "word": "uncertain",
+        "start": 9.479166,
+        "duration": 0.601833
+      },
+      {
+        "word": "JAH-chai",
+        "start": 10.104166,
+        "duration": 0.590291
+      },
+      {
+        "word": "says",
+        "start": 10.706,
+        "duration": 0.2315
+      },
+      {
+        "word": "so",
+        "start": 10.949083,
+        "duration": 0.219916
+      },
+      {
+        "word": "honestly",
+        "start": 11.180541,
+        "duration": 0.567125
+      },
+      {
+        "word": "It",
+        "start": 12.087041,
+        "duration": 0.127333
+      },
+      {
+        "word": "never",
+        "start": 12.225916,
+        "duration": 0.277791
+      },
+      {
+        "word": "guesses",
+        "start": 12.515291,
+        "duration": 0.555541
+      }
+    ]
+  },
+  "s06-vision-check": {
+    "duration": 14.088,
+    "text": "For photos and videos, pick them from your gallery. Jachai extracts on-screen text with dual-language OCR, while an on-device computer vision model inspects visual patterns for generative AI artifacts, with zero cloud API costs.",
+    "words": [
+      {
+        "word": "For",
+        "start": 0.081,
+        "duration": 0.138875
+      },
+      {
+        "word": "photos",
+        "start": 0.2315,
+        "duration": 0.451375
+      },
+      {
+        "word": "and",
+        "start": 0.694458,
+        "duration": 0.104166
+      },
+      {
+        "word": "videos",
+        "start": 0.810166,
+        "duration": 0.601833
+      },
+      {
+        "word": "pick",
+        "start": 1.782416,
+        "duration": 0.208333
+      },
+      {
+        "word": "them",
+        "start": 2.002333,
+        "duration": 0.173625
+      },
+      {
+        "word": "from",
+        "start": 2.1875,
+        "duration": 0.162041
+      },
+      {
+        "word": "your",
+        "start": 2.361125,
+        "duration": 0.104166
+      },
+      {
+        "word": "gallery",
+        "start": 2.476833,
+        "duration": 0.520833
+      },
+      {
+        "word": "JAH-chai",
+        "start": 3.368041,
+        "duration": 0.648166
+      },
+      {
+        "word": "extracts",
+        "start": 4.027791,
+        "duration": 0.532416
+      },
+      {
+        "word": "on-screen",
+        "start": 4.583333,
+        "duration": 0.439833
+      },
+      {
+        "word": "text",
+        "start": 5.034708,
+        "duration": 0.347208
+      },
+      {
+        "word": "with",
+        "start": 5.3935,
+        "duration": 0.138875
+      },
+      {
+        "word": "dual-language",
+        "start": 5.544,
+        "duration": 0.532416
+      },
+      {
+        "word": "OCR",
+        "start": 6.087958,
+        "duration": 0.567125
+      },
+      {
+        "word": "while",
+        "start": 7.1875,
+        "duration": 0.185166
+      },
+      {
+        "word": "an",
+        "start": 7.38425,
+        "duration": 0.069458
+      },
+      {
+        "word": "on-device",
+        "start": 7.465291,
+        "duration": 0.497666
+      },
+      {
+        "word": "computer",
+        "start": 7.974541,
+        "duration": 0.324083
+      },
+      {
+        "word": "vision",
+        "start": 8.310166,
+        "duration": 0.243041
+      },
+      {
+        "word": "model",
+        "start": 8.564833,
+        "duration": 0.3125
+      },
+      {
+        "word": "inspects",
+        "start": 8.888875,
+        "duration": 0.381958
+      },
+      {
+        "word": "visual",
+        "start": 9.282416,
+        "duration": 0.3125
+      },
+      {
+        "word": "patterns",
+        "start": 9.6065,
+        "duration": 0.42825
+      },
+      {
+        "word": "for",
+        "start": 10.046291,
+        "duration": 0.11575
+      },
+      {
+        "word": "generative",
+        "start": 10.173625,
+        "duration": 0.381958
+      },
+      {
+        "word": "AI",
+        "start": 10.567125,
+        "duration": 0.300916
+      },
+      {
+        "word": "artifacts",
+        "start": 10.879625,
+        "duration": 0.636583
+      },
+      {
+        "word": "with",
+        "start": 11.805541,
+        "duration": 0.162041
+      },
+      {
+        "word": "zero",
+        "start": 11.979166,
+        "duration": 0.335666
+      },
+      {
+        "word": "cloud",
+        "start": 12.326375,
+        "duration": 0.381958
+      },
+      {
+        "word": "API",
+        "start": 12.7315,
+        "duration": 0.451375
+      },
+      {
+        "word": "costs",
+        "start": 13.194458,
+        "duration": 0.544
+      }
+    ]
+  },
+  "s07-bubble-demo": {
+    "duration": 14.112,
+    "text": "For feeds where sharing is locked, turn on Jachai's floating bubble. Use your phone as usual. If a post feels suspicious, tap the bubble. Jachai inspects the screen and gives you an instant verdict right where you are.",
+    "words": [
+      {
+        "word": "For",
+        "start": 0.081,
+        "duration": 0.2315
+      },
+      {
+        "word": "feeds",
+        "start": 0.324083,
+        "duration": 0.335666
+      },
+      {
+        "word": "where",
+        "start": 0.671291,
+        "duration": 0.127333
+      },
+      {
+        "word": "sharing",
+        "start": 0.810166,
+        "duration": 0.405083
+      },
+      {
+        "word": "is",
+        "start": 1.226833,
+        "duration": 0.127333
+      },
+      {
+        "word": "locked",
+        "start": 1.36575,
+        "duration": 0.405083
+      },
+      {
+        "word": "turn",
+        "start": 2.280083,
+        "duration": 0.300916
+      },
+      {
+        "word": "on",
+        "start": 2.592583,
+        "duration": 0.19675
+      },
+      {
+        "word": "JAH-chai's",
+        "start": 2.800916,
+        "duration": 1.0185
+      },
+      {
+        "word": "floating",
+        "start": 3.831,
+        "duration": 0.358791
+      },
+      {
+        "word": "bubble",
+        "start": 4.201375,
+        "duration": 0.347208
+      },
+      {
+        "word": "Use",
+        "start": 4.907416,
+        "duration": 0.208333
+      },
+      {
+        "word": "your",
+        "start": 5.127333,
+        "duration": 0.11575
+      },
+      {
+        "word": "phone",
+        "start": 5.254625,
+        "duration": 0.335666
+      },
+      {
+        "word": "as",
+        "start": 5.601833,
+        "duration": 0.150458
+      },
+      {
+        "word": "usual",
+        "start": 5.763875,
+        "duration": 0.544
+      },
+      {
+        "word": "If",
+        "start": 6.647208,
+        "duration": 0.11575
+      },
+      {
+        "word": "a",
+        "start": 6.774541,
+        "duration": 0.069458
+      },
+      {
+        "word": "post",
+        "start": 6.855541,
+        "duration": 0.358791
+      },
+      {
+        "word": "feels",
+        "start": 7.225916,
+        "duration": 0.289333
+      },
+      {
+        "word": "suspicious",
+        "start": 7.526833,
+        "duration": 0.74075
+      },
+      {
+        "word": "tap",
+        "start": 8.707416,
+        "duration": 0.266208
+      },
+      {
+        "word": "the",
+        "start": 8.985166,
+        "duration": 0.081
+      },
+      {
+        "word": "bubble",
+        "start": 9.077791,
+        "duration": 0.405083
+      },
+      {
+        "word": "JAH-chai",
+        "start": 9.814833,
+        "duration": 0.601833
+      },
+      {
+        "word": "inspects",
+        "start": 10.42825,
+        "duration": 0.439833
+      },
+      {
+        "word": "the",
+        "start": 10.879625,
+        "duration": 0.069458
+      },
+      {
+        "word": "screen",
+        "start": 10.960666,
+        "duration": 0.486125
+      },
+      {
+        "word": "and",
+        "start": 11.469916,
+        "duration": 0.138875
+      },
+      {
+        "word": "gives",
+        "start": 11.620375,
+        "duration": 0.208333
+      },
+      {
+        "word": "you",
+        "start": 11.840291,
+        "duration": 0.162041
+      },
+      {
+        "word": "an",
+        "start": 12.013875,
+        "duration": 0.081
+      },
+      {
+        "word": "instant",
+        "start": 12.1065,
+        "duration": 0.370375
+      },
+      {
+        "word": "verdict",
+        "start": 12.488416,
+        "duration": 0.324083
+      },
+      {
+        "word": "right",
+        "start": 12.824083,
+        "duration": 0.266208
+      },
+      {
+        "word": "where",
+        "start": 13.101833,
+        "duration": 0.138875
+      },
+      {
+        "word": "you",
+        "start": 13.252333,
+        "duration": 0.162041
+      },
+      {
+        "word": "are",
+        "start": 13.425916,
+        "duration": 0.335666
+      }
+    ]
+  },
+  "s08-privacy": {
+    "duration": 14.208,
+    "text": "Crucially, Jachai is private by design. There are no user accounts, no logins, and zero user data is ever stored. Uploads are analyzed in memory and immediately deleted. All inference runs inside a single lightweight container.",
+    "words": [
+      {
+        "word": "Crucially",
+        "start": 0.069458,
+        "duration": 0.50925
+      },
+      {
+        "word": "JAH-chai",
+        "start": 0.601833,
+        "duration": 0.648166
+      },
+      {
+        "word": "is",
+        "start": 1.261583,
+        "duration": 0.173625
+      },
+      {
+        "word": "private",
+        "start": 1.44675,
+        "duration": 0.42825
+      },
+      {
+        "word": "by",
+        "start": 1.886583,
+        "duration": 0.150458
+      },
+      {
+        "word": "design",
+        "start": 2.048625,
+        "duration": 0.544
+      },
+      {
+        "word": "There",
+        "start": 2.951375,
+        "duration": 0.092583
+      },
+      {
+        "word": "are",
+        "start": 3.055541,
+        "duration": 0.069458
+      },
+      {
+        "word": "no",
+        "start": 3.136583,
+        "duration": 0.19675
+      },
+      {
+        "word": "user",
+        "start": 3.344916,
+        "duration": 0.347208
+      },
+      {
+        "word": "accounts",
+        "start": 3.703708,
+        "duration": 0.50925
+      },
+      {
+        "word": "no",
+        "start": 4.236125,
+        "duration": 0.173625
+      },
+      {
+        "word": "logins",
+        "start": 4.421291,
+        "duration": 0.497666
+      },
+      {
+        "word": "and",
+        "start": 4.942125,
+        "duration": 0.150458
+      },
+      {
+        "word": "zero",
+        "start": 5.104166,
+        "duration": 0.324083
+      },
+      {
+        "word": "user",
+        "start": 5.439833,
+        "duration": 0.289333
+      },
+      {
+        "word": "data",
+        "start": 5.74075,
+        "duration": 0.324083
+      },
+      {
+        "word": "is",
+        "start": 6.076375,
+        "duration": 0.173625
+      },
+      {
+        "word": "ever",
+        "start": 6.261583,
+        "duration": 0.185166
+      },
+      {
+        "word": "stored",
+        "start": 6.458333,
+        "duration": 0.474541
+      },
+      {
+        "word": "Uploads",
+        "start": 7.30325,
+        "duration": 0.451375
+      },
+      {
+        "word": "are",
+        "start": 7.766208,
+        "duration": 0.208333
+      },
+      {
+        "word": "analyzed",
+        "start": 7.986125,
+        "duration": 0.544
+      },
+      {
+        "word": "in",
+        "start": 8.541666,
+        "duration": 0.104166
+      },
+      {
+        "word": "memory",
+        "start": 8.657416,
+        "duration": 0.486125
+      },
+      {
+        "word": "and",
+        "start": 9.155083,
+        "duration": 0.150458
+      },
+      {
+        "word": "immediately",
+        "start": 9.317125,
+        "duration": 0.50925
+      },
+      {
+        "word": "deleted",
+        "start": 9.837958,
+        "duration": 0.532416
+      },
+      {
+        "word": "All",
+        "start": 10.74075,
+        "duration": 0.208333
+      },
+      {
+        "word": "inference",
+        "start": 10.960666,
+        "duration": 0.42825
+      },
+      {
+        "word": "runs",
+        "start": 11.400458,
+        "duration": 0.370375
+      },
+      {
+        "word": "inside",
+        "start": 11.794,
+        "duration": 0.50925
+      },
+      {
+        "word": "a",
+        "start": 12.314833,
+        "duration": 0.069458
+      },
+      {
+        "word": "single",
+        "start": 12.395833,
+        "duration": 0.451375
+      },
+      {
+        "word": "lightweight",
+        "start": 12.858791,
+        "duration": 0.416666
+      },
+      {
+        "word": "container",
+        "start": 13.287041,
+        "duration": 0.567125
+      }
+    ]
+  },
+  "s09-business": {
+    "duration": 12.192,
+    "text": "The core verification tool is completely free for every citizen. To keep the project sustainable, an optional family plan at roughly fifty taka a month covers elderly relatives through direct mobile and bKash billing.",
+    "words": [
+      {
+        "word": "The",
+        "start": 0.069458,
+        "duration": 0.057875
+      },
+      {
+        "word": "core",
+        "start": 0.138875,
+        "duration": 0.277791
+      },
+      {
+        "word": "verification",
+        "start": 0.42825,
+        "duration": 0.636583
+      },
+      {
+        "word": "tool",
+        "start": 1.076375,
+        "duration": 0.324083
+      },
+      {
+        "word": "is",
+        "start": 1.412041,
+        "duration": 0.173625
+      },
+      {
+        "word": "completely",
+        "start": 1.597208,
+        "duration": 0.497666
+      },
+      {
+        "word": "free",
+        "start": 2.1065,
+        "duration": 0.381958
+      },
+      {
+        "word": "for",
+        "start": 2.5,
+        "duration": 0.2315
+      },
+      {
+        "word": "every",
+        "start": 2.743041,
+        "duration": 0.243041
+      },
+      {
+        "word": "citizen",
+        "start": 2.997666,
+        "duration": 0.544
+      },
+      {
+        "word": "To",
+        "start": 3.900458,
+        "duration": 0.069458
+      },
+      {
+        "word": "keep",
+        "start": 3.9815,
+        "duration": 0.219916
+      },
+      {
+        "word": "the",
+        "start": 4.212958,
+        "duration": 0.081
+      },
+      {
+        "word": "project",
+        "start": 4.305541,
+        "duration": 0.3935
+      },
+      {
+        "word": "sustainable",
+        "start": 4.710666,
+        "duration": 0.659708
+      },
+      {
+        "word": "an",
+        "start": 5.752333,
+        "duration": 0.150458
+      },
+      {
+        "word": "optional",
+        "start": 5.914333,
+        "duration": 0.370375
+      },
+      {
+        "word": "family",
+        "start": 6.296291,
+        "duration": 0.324083
+      },
+      {
+        "word": "plan",
+        "start": 6.631958,
+        "duration": 0.3125
+      },
+      {
+        "word": "at",
+        "start": 6.956,
+        "duration": 0.150458
+      },
+      {
+        "word": "roughly",
+        "start": 7.118041,
+        "duration": 0.266208
+      },
+      {
+        "word": "fifty",
+        "start": 7.395833,
+        "duration": 0.243041
+      },
+      {
+        "word": "taka",
+        "start": 7.650458,
+        "duration": 0.451375
+      },
+      {
+        "word": "a",
+        "start": 8.136583,
+        "duration": 0.081
+      },
+      {
+        "word": "month",
+        "start": 8.229166,
+        "duration": 0.3125
+      },
+      {
+        "word": "covers",
+        "start": 8.55325,
+        "duration": 0.3935
+      },
+      {
+        "word": "elderly",
+        "start": 8.958333,
+        "duration": 0.3935
+      },
+      {
+        "word": "relatives",
+        "start": 9.363416,
+        "duration": 0.544
+      },
+      {
+        "word": "through",
+        "start": 9.919,
+        "duration": 0.19675
+      },
+      {
+        "word": "direct",
+        "start": 10.127333,
+        "duration": 0.347208
+      },
+      {
+        "word": "mobile",
+        "start": 10.486125,
+        "duration": 0.405083
+      },
+      {
+        "word": "and",
+        "start": 10.902791,
+        "duration": 0.127333
+      },
+      {
+        "word": "bKash",
+        "start": 11.041666,
+        "duration": 0.416666
+      },
+      {
+        "word": "billing",
+        "start": 11.469916,
+        "duration": 0.370375
+      }
+    ]
+  },
+  "s10-team-cta": {
+    "duration": 12.936,
+    "text": "We are team Jachai: Rumman, Saleh, Anika, Sami, Mirazul and Sami. Try it today. And next time, check it, before you forward it.",
+    "words": [
+      {
+        "word": "We",
+        "start": 0.081,
+        "duration": 0.138875
+      },
+      {
+        "word": "are",
+        "start": 0.2315,
+        "duration": 0.092583
+      },
+      {
+        "word": "team",
+        "start": 0.335666,
+        "duration": 0.347208
+      },
+      {
+        "word": "JAH-chai",
+        "start": 0.694458,
+        "duration": 0.879625
+      },
+      {
+        "word": "ROOM-mahn",
+        "start": 2.361125,
+        "duration": 0.474541
+      },
+      {
+        "word": "SAH-leh",
+        "start": 3.113416,
+        "duration": 0.729166
+      },
+      {
+        "word": "AH-nee-kah",
+        "start": 4.537041,
+        "duration": 0.694458
+      },
+      {
+        "word": "SAH-mee",
+        "start": 5.787041,
+        "duration": 0.775458
+      },
+      {
+        "word": "MEE-rah-zool",
+        "start": 7.083333,
+        "duration": 0.902791
+      },
+      {
+        "word": "and",
+        "start": 7.997666,
+        "duration": 0.104166
+      },
+      {
+        "word": "SAH-mee",
+        "start": 8.113416,
+        "duration": 0.717583
+      },
+      {
+        "word": "Try",
+        "start": 9.166666,
+        "duration": 0.254625
+      },
+      {
+        "word": "it",
+        "start": 9.432875,
+        "duration": 0.11575
+      },
+      {
+        "word": "today",
+        "start": 9.560166,
+        "duration": 0.439833
+      },
+      {
+        "word": "And",
+        "start": 10.336583,
+        "duration": 0.104166
+      },
+      {
+        "word": "next",
+        "start": 10.452333,
+        "duration": 0.266208
+      },
+      {
+        "word": "time",
+        "start": 10.730083,
+        "duration": 0.335666
+      },
+      {
+        "word": "check",
+        "start": 11.077333,
+        "duration": 0.266208
+      },
+      {
+        "word": "it",
+        "start": 11.355083,
+        "duration": 0.173625
+      },
+      {
+        "word": "before",
+        "start": 11.551833,
+        "duration": 0.300916
+      },
+      {
+        "word": "you",
+        "start": 11.864333,
+        "duration": 0.104166
+      },
+      {
+        "word": "forward",
+        "start": 11.980083,
+        "duration": 0.358791
+      },
+      {
+        "word": "it",
+        "start": 12.350458,
+        "duration": 0.2315
+      }
+    ]
+  }
+}

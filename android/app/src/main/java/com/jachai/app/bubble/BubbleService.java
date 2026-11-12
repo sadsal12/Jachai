@@ -39,6 +39,7 @@ import androidx.core.app.ServiceCompat;
 import androidx.core.content.FileProvider;
 import androidx.core.content.IntentCompat;
 
+import com.jachai.app.BuildConfig;
 import com.jachai.app.R;
 import com.jachai.app.VerdictActivity;
 
@@ -63,6 +64,10 @@ public class BubbleService extends Service {
     private static final int NOTIFICATION_ID = 42;
     private static final long HIDE_BEFORE_CAPTURE_MS = 300;
     private static final long LONG_PRESS_CLOSE_MS = 800;
+    /** The rehearsed post used by the demo build (see BuildConfig.DEMO_BUBBLE). */
+    private static final String DEMO_TEXT = "URGENT!! Please share with everyone. Child kidnappers are going around "
+            + "collecting children's heads because the Padma Bridge construction needs human heads. Keep your kids "
+            + "inside and forward this to every group!";
 
     private static volatile boolean running;
 
@@ -115,7 +120,7 @@ public class BubbleService extends Service {
         int resultCode = intent.getIntExtra(EXTRA_RESULT_CODE, Activity.RESULT_CANCELED);
         Intent data = IntentCompat.getParcelableExtra(intent, EXTRA_RESULT_DATA, Intent.class);
         try {
-            startProjection(resultCode, data);
+            if (!BuildConfig.DEMO_BUBBLE) startProjection(resultCode, data);
             showBubble();
             running = true;
         } catch (RuntimeException e) {
@@ -165,7 +170,9 @@ public class BubbleService extends Service {
                 .addAction(0, getString(R.string.bubble_stop), stop)
                 .setOngoing(true)
                 .build();
-        int type = Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q ? ServiceInfo.FOREGROUND_SERVICE_TYPE_MEDIA_PROJECTION : 0;
+        int type = BuildConfig.DEMO_BUBBLE
+                ? (Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE ? ServiceInfo.FOREGROUND_SERVICE_TYPE_SPECIAL_USE : 0)
+                : (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q ? ServiceInfo.FOREGROUND_SERVICE_TYPE_MEDIA_PROJECTION : 0);
         ServiceCompat.startForeground(this, NOTIFICATION_ID, notification, type);
     }
 
@@ -279,6 +286,10 @@ public class BubbleService extends Service {
     // ---------------------------------------------------------------- capture
 
     private void captureScreen() {
+        if (BuildConfig.DEMO_BUBBLE) {
+            demoCheck();
+            return;
+        }
         bubble.setVisibility(View.INVISIBLE);  // hiding it also forces a fresh frame without the bubble
         captureHandler.postDelayed(() -> {
             File file = null;
@@ -303,6 +314,19 @@ public class BubbleService extends Service {
                     openVerdict(captured);
                 }
             });
+        }, HIDE_BEFORE_CAPTURE_MS);
+    }
+
+    /** Demo build: same hide-and-check feel, but sends the rehearsed message as text instead of a screenshot. */
+    private void demoCheck() {
+        bubble.setVisibility(View.INVISIBLE);
+        main.postDelayed(() -> {
+            if (bubble != null) bubble.setVisibility(View.VISIBLE);
+            startActivity(new Intent(Intent.ACTION_SEND)
+                    .setClass(this, VerdictActivity.class)
+                    .setType("text/plain")
+                    .putExtra(Intent.EXTRA_TEXT, DEMO_TEXT)
+                    .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
         }, HIDE_BEFORE_CAPTURE_MS);
     }
 

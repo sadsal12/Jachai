@@ -1,0 +1,58 @@
+{
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rate": "-4%",
+  "scenes": [
+    {
+      "id": "s01-cold-open",
+      "text": "It always starts with a forward that says it's urgent, and asks you to share it with everyone. And before anyone checks, it is already in every family group."
+    },
+    {
+      "id": "s02-problem",
+      "text": "Rumours now travel faster than the truth, through WhatsApp, Facebook and Messenger. The people who receive the most forwards are often the least able to check them: our parents and grandparents. And with AI, a fake photo or video takes seconds to make. In twenty nineteen, a rumour just like this one led to mob attacks on innocent people."
+    },
+    {
+      "id": "s03-reveal",
+      "text": "Meet Jachai. It means: verify. Check it, before you forward it."
+    },
+    {
+      "id": "s04-whatsapp",
+      "text": "Here is a real forward in WhatsApp. Tap Share, choose Jachai, and in seconds, a full-screen answer. Known hoax. Very sure. And exactly what to do next: don't forward this. The phone even buzzes twice, so no one misses it."
+    },
+    {
+      "id": "s05-text",
+      "text": "Got a message you can't share? Paste it into Jachai and tap Check. Every answer comes in plain Bangla and English, with how sure it is. And when it isn't sure, it says so."
+    },
+    {
+      "id": "s06-media",
+      "text": "Photos and videos work too. An AI image classifier looks for the fingerprints of generation, and Jachai reads the text inside screenshots, in both languages."
+    },
+    {
+      "id": "s07-bubble",
+      "text": "For posts you can't share at all, there's the bubble. Use your phone as usual. When something feels off, tap it, and Jachai checks it, right where you are."
+    },
+    {
+      "id": "s07b-different",
+      "text": "Fact-check websites only help if you go looking. Jachai lives where rumours actually spread: in the share menu, and on top of every app."
+    },
+    {
+      "id": "s08-everyone",
+      "text": "It's built for older eyes first. Large text, big buttons, light and dark mode, Bangla and English. Simple enough for anyone."
+    },
+    {
+      "id": "s09-how",
+      "text": "Under the hood, every check is routed by type. OCR reads Bangla and English text. A fuzzy matcher compares it with a curated library of known hoaxes. And a vision model scores photos and video frames. If a model is ever too slow, a lighter fallback still gives an honest answer."
+    },
+    {
+      "id": "s10-responsible",
+      "text": "No account. No uploads kept after the check. Your history stays on your phone. And Jachai never pretends to be sure when it isn't."
+    },
+    {
+      "id": "s11-business",
+      "text": "The core app is free, for up to five checks a day. A family plan, a hundred and fifty taka a month through mobile or bKash billing, covers the people you love. It works on almost any Android or iOS phone, even older, low-cost ones, and the hoax library is built to grow with fact-checkers, here and abroad. Next, we plan to partner with telecom operators and fact-checking groups, so Jachai can reach first-time smartphone users from day one."
+    },
+    {
+      "id": "s12-team",
+      "text": "We are team Jachai: Rumman, Saleh, Anika, Sami, Mirazul and Sami. Try it today. And next time, check it, before you forward it."
+    }
+  ]
+}

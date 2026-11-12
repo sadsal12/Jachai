@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Demo build only: the bubble doesn't capture the screen, so its service runs as a plain special-use foreground service. -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
+
+    <application>
+        <service
+            android:name=".bubble.BubbleService"
+            android:foregroundServiceType="specialUse"
+            tools:replace="android:foregroundServiceType">
+            <property
+                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="Floating bubble for recording a product demo" />
+        </service>
+    </application>
+</manifest>

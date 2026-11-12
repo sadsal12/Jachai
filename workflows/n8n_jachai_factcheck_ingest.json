@@ -1,0 +1,278 @@
+{
+  "name": "Jachai - Automated Fact-Check Ingestion & Monitoring Pipeline",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours",
+              "hoursInterval": 1
+            }
+          ]
+        }
+      },
+      "id": "schedule-trigger-1",
+      "name": "Schedule Trigger (Hourly)",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        220,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "jachai-rumor-tip",
+        "options": {}
+      },
+      "id": "webhook-trigger-1",
+      "name": "Community Rumor Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        220,
+        500
+      ],
+      "webhookId": "9b8e7e14-2c93-4a11-a83d-jachai-tip-01"
+    },
+    {
+      "parameters": {
+        "url": "https://rumorscanner.com/feed",
+        "options": {}
+      },
+      "id": "rss-read-1",
+      "name": "Poll Rumor Scanner RSS Feed",
+      "type": "n8n-nodes-base.rssFeedRead",
+      "typeVersion": 1.1,
+      "position": [
+        460,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Deduplicate against recent feed items and filter out noise\nconst items = $input.all();\nconst results = [];\n\nfor (const item of items) {\n  const title = item.json.title || '';\n  const snippet = item.json.contentSnippet || item.json.content || '';\n  const link = item.json.link || '';\n  const pubDate = item.json.pubDate || new Date().toISOString();\n  \n  // Skip empty or trivial entries\n  if (title.length > 10) {\n    results.push({\n      json: {\n        raw_title: title,\n        raw_snippet: snippet,\n        source_url: link,\n        published_at: pubDate,\n        timestamp: new Date().toISOString()\n      }\n    });\n  }\n}\n\nreturn results.slice(0, 5);"
+      },
+      "id": "code-filter-1",
+      "name": "Deduplicate & Sanitize",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        680,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "model": "claude-3-5-sonnet-latest",
+        "promptType": "define",
+        "text": "=Extract structured misinformation claims and facts from this Bangladeshi news item:\nTitle: {{ $json.raw_title }}\nContent: {{ $json.raw_snippet }}\n\nOutput STRICT JSON with:\n{\n  \"claim_bn\": \"core viral claim in Bengali\",\n  \"claim_en\": \"core viral claim in English\",\n  \"aliases\": [\"viral phrase 1\", \"viral phrase 2\"],\n  \"fact_bn\": \"factual debunking in Bengali\",\n  \"fact_en\": \"factual debunking in English\",\n  \"category\": \"politics | communal | health | financial | general\"\n}",
+        "options": {
+          "temperature": 0.1
+        }
+      },
+      "id": "ai-claim-extractor-1",
+      "name": "AI Claim & Fact Extractor",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        900,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://localhost:8000/verify/text",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"text\": \"{{ $json.output.claim_bn || $json.output.claim_en }}\"\n}",
+        "options": {
+          "timeout": 5000
+        }
+      },
+      "id": "http-jachai-verify-1",
+      "name": "Jachai MCP / API Verification",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1120,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "condition-known-hoax",
+              "leftValue": "={{ $json.confidence }}",
+              "rightValue": 0.58,
+              "operator": {
+                "type": "number",
+                "operation": "gte"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "if-known-or-new-1",
+      "name": "Check Known Hoax Threshold",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        1340,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "chatId": "-1001928374650",
+        "text": "=⚠️ *Known Hoax Detected in Feed*\n*Claim:* {{ $('ai-claim-extractor-1').item.json.output.claim_bn }}\n*Confidence:* {{ ($json.confidence * 100).toFixed(1) }}%\n*Verdict:* {{ $json.verdict }}\n*Source:* {{ $('code-filter-1').item.json.source_url }}\n\n_Auto-logged to Jachai verification telemetry._",
+        "additionalFields": {
+          "parse_mode": "Markdown"
+        }
+      },
+      "id": "telegram-alert-known-1",
+      "name": "Notify Telegram (Known Hoax)",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1580,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "chatId": "-1001928374650",
+        "text": "=🚨 *NEW UNINDEXED RUMOR DETECTED*\n*Claim (BN):* {{ $('ai-claim-extractor-1').item.json.output.claim_bn }}\n*Claim (EN):* {{ $('ai-claim-extractor-1').item.json.output.claim_en }}\n*Debunking Fact:* {{ $('ai-claim-extractor-1').item.json.output.fact_en }}\n*Category:* {{ $('ai-claim-extractor-1').item.json.output.category }}\n*Source:* {{ $('code-filter-1').item.json.source_url }}\n\nAction: Ready for instant indexing into `backend/data/hoaxes.json`.",
+        "additionalFields": {
+          "parse_mode": "Markdown"
+        }
+      },
+      "id": "telegram-alert-new-1",
+      "name": "Dispatch Alert: New Hoax Candidate",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1580,
+        420
+      ]
+    }
+  ],
+  "connections": {
+    "Schedule Trigger (Hourly)": {
+      "main": [
+        [
+          {
+            "node": "Poll Rumor Scanner RSS Feed",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Community Rumor Webhook": {
+      "main": [
+        [
+          {
+            "node": "Deduplicate & Sanitize",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Poll Rumor Scanner RSS Feed": {
+      "main": [
+        [
+          {
+            "node": "Deduplicate & Sanitize",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Deduplicate & Sanitize": {
+      "main": [
+        [
+          {
+            "node": "AI Claim & Fact Extractor",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Claim & Fact Extractor": {
+      "main": [
+        [
+          {
+            "node": "Jachai MCP / API Verification",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Jachai MCP / API Verification": {
+      "main": [
+        [
+          {
+            "node": "Check Known Hoax Threshold",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Known Hoax Threshold": {
+      "main": [
+        [
+          {
+            "node": "Notify Telegram (Known Hoax)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Dispatch Alert: New Hoax Candidate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "b6a71e22-8d4e-4f11-9a7c-jachai-n8n-v1",
+  "id": "jachai-factcheck-ingest",
+  "tags": [
+    {
+      "name": "misinformation",
+      "id": "tag-misinfo"
+    },
+    {
+      "name": "jachai",
+      "id": "tag-jachai"
+    },
+    {
+      "name": "fact-checking",
+      "id": "tag-factcheck"
+    }
+  ]
+}

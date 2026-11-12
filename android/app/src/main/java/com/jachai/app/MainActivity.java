@@ -216,6 +216,13 @@ public class MainActivity extends BaseActivity {
             startActivity(new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION, Uri.parse("package:" + getPackageName())));
             return;
         }
+        if (BuildConfig.DEMO_BUBBLE) {  // demo build: no screen-capture consent needed
+            ContextCompat.startForegroundService(this, new Intent(this, BubbleService.class));
+            Toast.makeText(this, R.string.toast_bubble_started, Toast.LENGTH_LONG).show();
+            showBubbleState(true, true);
+            moveTaskToBack(true);
+            return;
+        }
         MediaProjectionManager mpm = getSystemService(MediaProjectionManager.class);
         screenCaptureConsent.launch(mpm.createScreenCaptureIntent());
     }

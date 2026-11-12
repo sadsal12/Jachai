@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 600" width="1600" height="600" preserveAspectRatio="xMinYMid slice">
+  <style>svg{--primary:#111111;--secondary:#F2F2F0;--bg:#FFFFFF;--accent:#8CA8F9}</style>
+  <!-- In-app promo card, 8:3 (1600 x 600). Fixed ink palette in both themes: a promo card stays dark on a light page and on a dark one. Responsive: 'xMinYMid slice' crops from the right, so the text zone on the left always survives. -->
+  <defs>
+    <pattern id="dots" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="20" cy="20" r="2.5" style="fill:var(--bg)"/></pattern>
+    <linearGradient id="fade" x1="0" x2="1">
+      <stop offset="0.45" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#fff" stop-opacity="1"/></linearGradient>
+    <mask id="fadeMask" maskUnits="userSpaceOnUse" x="0" y="0" width="1600" height="600">
+      <rect width="1600" height="600" fill="url(#fade)"/></mask>
+  </defs>
+
+  <!-- Layer 1: canvas -->
+  <rect width="1600" height="600" style="fill:var(--primary)"/>
+
+  <!-- Layer 2: quiet dot grid, right side only, fading out towards the text -->
+  <rect width="1600" height="600" fill="url(#dots)" mask="url(#fadeMask)" opacity="0.12"/>
+
+  <!-- Layer 3: ripple rings around the floating dot -->
+  <g fill="none" stroke-width="2" opacity="0.16" style="stroke:var(--bg)">
+    <circle cx="1385" cy="223" r="99"/>
+    <circle cx="1385" cy="223" r="165"/>
+    <circle cx="1385" cy="223" r="238"/>
+  </g>
+
+  <!-- Layer 4: the B3 tile, reversed (light tile on the dark canvas); the dot carries the accent -->
+  <g transform="translate(1300 320) scale(1.4732) translate(-128 -128)">
+      <defs><mask id="bite" maskUnits="userSpaceOnUse" x="0" y="0" width="256" height="256">
+        <rect width="256" height="256" fill="#fff"/><circle cx="186" cy="62" r="50" fill="#000"/></mask></defs>
+      <rect x="16" y="16" width="224" height="224" rx="60" mask="url(#bite)" style="fill:var(--bg)"/>
+      <!-- The floating dot: sits in a bite outside the tile, like Jachai's bubble over other apps -->
+      <circle cx="186" cy="62" r="30" style="fill:var(--accent)"/>
+      <path d="M140 128V164A42 42 0 0 1 98 206H92" fill="none" stroke-width="36" stroke-linecap="round" style="stroke:var(--primary)"/>
+  </g>
+
+  <!-- Text Safe Zone: x 96-996, y 110-510. Headline, body and CTA go here; no decoration overlaps it. -->
+  <rect x="96" y="110" width="900" height="400" fill="none" stroke="#f0f" stroke-dasharray="12 8"/>
+  
+  <text x="96" y="230" font-family="Roboto, sans-serif" font-size="51" font-weight="700" fill="#FFFFFF">Check it before you forward it.</text>
+  <text x="96" y="318" font-family="Roboto, sans-serif" font-size="25" opacity="0.75" fill="#FFFFFF">Jachai spots fake news, AI photos and hoaxes.</text>
+  <rect x="96" y="382" width="216" height="60" rx="30" fill="#FFFFFF"/>
+</svg>

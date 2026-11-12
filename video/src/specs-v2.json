@@ -1,0 +1,14 @@
+[
+  {"id": "s01-cold-open", "lead": 20, "tail": 48},
+  {"id": "s02-problem", "lead": 10, "tail": 20},
+  {"id": "s03-reveal", "lead": 30, "tail": 40},
+  {"id": "s04-whatsapp", "lead": 10, "tail": 25, "min": 570},
+  {"id": "s05-text", "lead": 10, "tail": 25},
+  {"id": "s06-media", "lead": 10, "tail": 25},
+  {"id": "s07-bubble", "lead": 10, "tail": 25, "min": 390},
+  {"id": "s08-everyone", "lead": 10, "tail": 20},
+  {"id": "s09-pipeline", "lead": 10, "tail": 25},
+  {"id": "s10-citizen", "lead": 10, "tail": 25},
+  {"id": "s11-business", "lead": 10, "tail": 25},
+  {"id": "s12-team", "lead": 15, "tail": 110}
+]

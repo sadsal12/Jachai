@@ -1,0 +1,12 @@
+# Jachai Cursor Rules - Spec-Driven & PRD-Grounded Engineering
+
+# Context & Purpose
+You are working on Jachai, an accessible bilingual AI misinformation verification platform built for Bangladesh.
+Always ground your implementations in `jachai_v2_redesign_spec.md`, `AGENTS.md`, and `docs/AI_USAGE.md`.
+
+# Critical Architectural Rules
+1. Zero Hallucination: Never generate fabricated claims or free-form hallucinated verdicts. All fact-check verdicts must come from `backend/data/hoaxes.json` or calibrated threshold classifiers.
+2. Bilingual Integrity: Always maintain pristine Bengali Unicode encoding (NFC normalized, zero-width characters stripped, virama handled cleanly).
+3. Android Accessibility: Maintain high-contrast UI, minimum 48dp touch targets, dynamic font scaling support, and zero jargon for elders and low-literacy users.
+4. Privacy First: Never transmit raw media or OCR text to third-party cloud LLM APIs at inference time. All inference runs locally inside the Docker container or local Ollama/llama.cpp daemons.
+5. Plan-Before-Execute: For changes spanning >2 files, produce a plan summary, obtain confirmation, and verify with pytest or gradle builds before completion.

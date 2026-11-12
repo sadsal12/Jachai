@@ -7,7 +7,7 @@ from functools import partial
 from fastapi import BackgroundTasks, FastAPI, File, HTTPException, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 
-from . import __version__, classifier, config, hoax_matcher, jobs, media_pipeline, mock, ocr, text_check
+from . import __version__, classifier, config, hoax_matcher, jobs, media_pipeline, mock, ocr, text_check, docs_portal
 from .schemas import JobCreated, Result, TextRequest
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s: %(message)s")
@@ -18,14 +18,21 @@ log = logging.getLogger("jachai")
 async def lifespan(_app: FastAPI):
     hoax_matcher.entries()
     ocr.status()
-    if not config.MOCK_MODE:
+    if not config.MOCK_MODE and config.ENABLE_ML and not os.getenv("TESTING"):
         classifier.load_in_background()  # pre-warm so the first judge's request isn't the slow one
     log.info("ready: mock=%s ml=%s", config.MOCK_MODE, config.ENABLE_ML)
     yield
 
 
-app = FastAPI(title="Jachai verification API", version=__version__, lifespan=lifespan)
+app = FastAPI(
+    title="Jachai verification API",
+    version=__version__,
+    lifespan=lifespan,
+    docs_url="/api/docs",
+    redoc_url="/api/redoc",
+)
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
+app.include_router(docs_portal.router)
 
 
 @app.get("/health")

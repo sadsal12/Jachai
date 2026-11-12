@@ -1,18 +1,130 @@
-__pycache__/
-*.pyc
-.venv/
-.pytest_cache/
-.env
-.hf-cache/
-# Shareable APKs are published as release files, not committed
+# ==============================================================================
+# Jachai - Comprehensive .gitignore
+# Prevents large binaries, personal assets, build artifacts, and secrets from GitHub
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 1. PERSONAL TEAM ASSETS & PRIVATE HEADSHOTS
+# ------------------------------------------------------------------------------
+**/team/
+**/team/*
+*team/*.jpg
+*team/*.jpeg
+*team/*.png
+*team/*.webp
+*team/*.avif
+
+# ------------------------------------------------------------------------------
+# 2. HEAVY MEDIA & VIDEO AUTOMATION RENDERS
+# ------------------------------------------------------------------------------
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.webm
+*.mp3
+*.wav
+*.m4a
+*.aac
+*.flac
+video/out/
+video_gemini/out/
+*/out/
+video/assets/
+video/public/clips/
+video_gemini/public/clips/
+video_gemini/public/music/
+video_gemini/public/sfx/
+video_gemini/public/story_vo/
+video_gemini/public/vo/
+
+# ------------------------------------------------------------------------------
+# 3. NODE.JS & REMOTION HEADLESS ENGINE
+# ------------------------------------------------------------------------------
+node_modules/
+*/node_modules/
+*/*/node_modules/
+.remotion/
+*/.remotion/
+*/*/.remotion/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# ------------------------------------------------------------------------------
+# 4. ANDROID BUILD ARTIFACTS & BINARIES
+# ------------------------------------------------------------------------------
+*.apk
+*.aab
+*.ap_
+*.dex
+*.class
+*.keystore
+*.jks
+local.properties
+.gradle/
+android/.gradle/
+build/
+android/build/
+android/app/build/
+*/build/
+*/*/build/
+captures/
+.cxx/
 dist/
 
-# OS and editor clutter
+# ------------------------------------------------------------------------------
+# 5. PYTHON, VIRTUAL ENVS & ML MODEL WEIGHTS
+# ------------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+.hf-cache/
+backend/.cache/
+backend/models/
+*.pt
+*.pth
+*.bin
+*.onnx
+*.safetensors
+*.pkl
+*.h5
+*.tflite
+*.tar.gz
+*.zip
+*.rar
+*.7z
+
+# ------------------------------------------------------------------------------
+# 6. CLOUDFLARE, WRANGLER & SECRETS
+# ------------------------------------------------------------------------------
+.wrangler/
+*/.wrangler/
+.vercel/
+.netlify/
+.env
+.env.*
+!.env.example
+
+# ------------------------------------------------------------------------------
+# 7. IDE, OS & SCRATCH UTILITIES
+# ------------------------------------------------------------------------------
+.idea/
+android/.idea/
+*.iml
+.vscode/
 .DS_Store
 Thumbs.db
 desktop.ini
-.vscode/
 *.log
-
-# Design kit renders: regenerate with `python design/build_kit.py` + the logo-design render script
-design/app-kit/previews/
+gen_tests.js
+scratch/

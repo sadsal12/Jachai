@@ -26,6 +26,7 @@ android {
         versionCode 2
         versionName '0.4.0'
         buildConfigField 'String', 'API_BASE_URL', "\"${apiBaseUrl}\""
+        buildConfigField 'boolean', 'DEMO_BUBBLE', 'false'
     }
 
     buildFeatures {
@@ -47,6 +48,15 @@ android {
         release {
             minifyEnabled false
             signingConfig keystoreFile.exists() ? signingConfigs.release : signingConfigs.debug
+        }
+        // Video-recording build ("Jachai Demo", installs beside the real app). The bubble skips screen capture and
+        // sends a fixed rehearsed message to the real backend, so it works while a screen recorder is running.
+        demo {
+            initWith release
+            applicationIdSuffix '.demo'
+            versionNameSuffix '-demo'
+            buildConfigField 'boolean', 'DEMO_BUBBLE', 'true'
+            matchingFallbacks = ['release']
         }
     }
 

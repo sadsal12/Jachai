@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <!-- Icon shape check: rounded rect, rx 115 = 22.5 % of 512 (close to the iOS / Play squircle).
+         Stores and launchers apply their own mask; this one is for previews and border-radius checks. -->
+    <mask id="app-icon-mask" maskUnits="userSpaceOnUse" x="0" y="0" width="512" height="512">
+      <rect width="512" height="512" rx="115" fill="#fff"/>
+    </mask>
+  </defs>
+  <g mask="url(#app-icon-mask)">
+    <rect width="512" height="512" fill="#111111"/>
+    <!-- The bite + floating dot -->
+    <circle cx="389" cy="105" r="114" fill="#FFFFFF"/>
+    <circle cx="389" cy="105" r="69" fill="#111111"/>
+    <!-- j: stem + hook, round ends -->
+    <path d="M283 256V338A96 96 0 0 1 187 434H174" fill="none" stroke="#FFFFFF" stroke-width="82" stroke-linecap="round"/>
+  </g>
+</svg>

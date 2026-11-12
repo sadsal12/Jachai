@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jachai</title>
+  <meta name="description" content="Check it before you forward it. Jachai is Bangladesh's 1st spec-grounded multimodal rumor-verification platform for WhatsApp & IMO.">
+
+  <!-- Open Graph / WhatsApp / Facebook / LinkedIn -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://jachai-demo.pages.dev/">
+  <meta property="og:title" content="Jachai — Check it before you forward it.">
+  <meta property="og:description" content="Spec-grounded multimodal rumor-verification platform designed for families on WhatsApp & IMO.">
+  <meta property="og:image" content="https://jachai-demo.pages.dev/og-preview.png">
+  <meta property="og:image:width" content="1280">
+  <meta property="og:image:height" content="720">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://jachai-demo.pages.dev/">
+  <meta name="twitter:title" content="Jachai — Check it before you forward it.">
+  <meta name="twitter:description" content="Spec-grounded multimodal rumor-verification platform designed for families on WhatsApp & IMO.">
+  <meta name="twitter:image" content="https://jachai-demo.pages.dev/og-preview.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=2.7">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+
+  <!-- TOP SHOWCASE HEADER (DESKTOP / JUDGES) -->
+  <header class="showcase-header">
+    <div class="brand-meta">
+      <div class="brand-squircle-icon-mini">
+        <svg viewBox="0 0 512 512" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <mask id="header-icon-mask" maskUnits="userSpaceOnUse" x="0" y="0" width="512" height="512">
+              <rect width="512" height="512" rx="115" fill="#FFFFFF"/>
+            </mask>
+          </defs>
+          <g mask="url(#header-icon-mask)">
+            <rect width="512" height="512" fill="#111111"/>
+            <!-- Signature Jachai floating notch: round bite + black floating dot -->
+            <circle cx="389" cy="105" r="114" fill="#FFFFFF"/>
+            <circle cx="389" cy="105" r="69" fill="#111111"/>
+            <!-- White j: stem + hook, round ends -->
+            <path d="M283 256V338A96 96 0 0 1 187 434H174" fill="none" stroke="#FFFFFF" stroke-width="82" stroke-linecap="round"/>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <strong style="font-size: 1.15rem; color: #0F172A; font-family: var(--font-system); letter-spacing: -0.02em;">JACHAI</strong>
+        <span style="font-size: 1.1rem; font-weight: 700; color: #2563EB; margin-left: 8px;" data-i18n="headerBrand">যাচাই</span>
+      </div>
+    </div>
+
+    <div class="showcase-actions">
+      <!-- shadcn-style Theme Toggle (Moon / Sun) -->
+      <button class="shadcn-theme-btn" id="themeDeviceToggle" title="Toggle phone dark mode" aria-label="Toggle phone dark mode">
+        <svg class="shadcn-icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="4"/>
+          <path d="M12 2v2"/>
+          <path d="M12 20v2"/>
+          <path d="m4.93 4.93 1.41 1.41"/>
+          <path d="m17.66 17.66 1.41 1.41"/>
+          <path d="M2 12h2"/>
+          <path d="M20 12h2"/>
+          <path d="m6.34 17.66-1.41 1.41"/>
+          <path d="m19.07 4.93-1.41 1.41"/>
+        </svg>
+        <svg class="shadcn-icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+        </svg>
+      </button>
+
+      <a href="app-release.apk" download="jachai-v2-release.apk" class="btn-header btn-apk-dl">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+          <polyline points="7 10 12 15 17 10"></polyline>
+          <line x1="12" y1="15" x2="12" y2="3"></line>
+        </svg>
+        <span data-i18n="headerApkDl">Download Release APK (5.3 MB)</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- SUBTLE DEMO DISCLAIMER STRIP -->
+  <div class="disclaimer-strip">
+    ⚡ <strong>Interactive Web Demo</strong>: Simulated preview of the Jachai app. Our backend server is temporarily offline, so please test features via this web demo (or download the APK to explore the native frontend).
+  </div>
+
+  <!-- MAIN WORKSPACE -->
+  <main class="showcase-body">
+    
+    <!-- LEFT COLUMN: YOUTUBE THUMBNAIL BRANDING & JUDGE SUITE -->
+    <aside class="thumbnail-left-col">
+      
+      <!-- HERO POSTER BLOCK (EXACT 1:1 REPLICA OF YOUTUBE THUMBNAIL) -->
+      <div class="thumbnail-hero-block">
+        <div class="thumbnail-brand-row">
+          <div class="brand-squircle-icon">
+            <svg viewBox="0 0 512 512" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <mask id="hero-logo-mask" maskUnits="userSpaceOnUse" x="0" y="0" width="512" height="512">
+                  <rect width="512" height="512" rx="115" fill="#FFFFFF"/>
+                </mask>
+              </defs>
+              <g mask="url(#hero-logo-mask)">
+                <rect width="512" height="512" fill="#111111"/>
+                <!-- Signature Jachai floating notch: round bite + black floating dot -->
+                <circle cx="389" cy="105" r="114" fill="#FFFFFF"/>
+                <circle cx="389" cy="105" r="69" fill="#111111"/>
+                <!-- White j: stem + hook, round ends -->
+                <path d="M283 256V338A96 96 0 0 1 187 434H174" fill="none" stroke="#FFFFFF" stroke-width="82" stroke-linecap="round"/>
+              </g>
+            </svg>
+          </div>
+          <div class="thumbnail-brand-text">
+            <span class="thumbnail-brand-name">Jachai</span>
+            <span class="thumbnail-brand-bn">যাচাই</span>
+          </div>
+        </div>
+
+        <h1 class="thumbnail-headline">
+          <span>Check it</span><br>
+          <span>before you</span><br>
+          <span class="headline-red">forward it.</span>
+        </h1>
+
+        <p class="thumbnail-tagline" data-i18n="heroTagline">
+          Bangladesh's 1st spec-grounded multimodal rumor-verification platform — engineered with high-contrast accessibility for elderly family members on WhatsApp & IMO.
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="app-release.apk" download="jachai-v2-release.apk" class="btn-hero-primary">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            <span data-i18n="heroDownloadApk">Download Release APK (5.3 MB)</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Team Showcase -->
+      <div class="judge-card">
+        <h3>
+          <span>👥</span>
+          <span data-i18n="teamCardTitle">Team Jachai</span>
+        </h3>
+        <div class="team-mini-grid">
+          <div class="team-pill">
+            <img src="team/rumman.jpg" alt="Rumman">
+            <div>
+              <div class="team-pill-name">Rumman</div>
+              <div class="team-pill-role">Product Manager & Frontend lead</div>
+            </div>
+          </div>
+          <div class="team-pill">
+            <img src="team/saleh.jpg" alt="Saleh">
+            <div>
+              <div class="team-pill-name">Saleh</div>
+              <div class="team-pill-role">Backend and System Architect</div>
+            </div>
+          </div>
+          <div class="team-pill">
+            <img src="team/anika.jpg" alt="Anika">
+            <div>
+              <div class="team-pill-name">Anika</div>
+              <div class="team-pill-role">AI Research & Documentation</div>
+            </div>
+          </div>
+          <div class="team-pill">
+            <img src="team/sami.jpg" alt="Sami">
+            <div>
+              <div class="team-pill-name">Sami</div>
+              <div class="team-pill-role">Strategy and pitch development</div>
+            </div>
+          </div>
+          <div class="team-pill">
+            <img src="team/mirazul.jpg" alt="Mirazul">
+            <div>
+              <div class="team-pill-name">Mirazul</div>
+              <div class="team-pill-role">QA & Field Testing</div>
+            </div>
+          </div>
+          <div class="team-pill">
+            <img src="team/sami2.jpg" alt="Sami">
+            <div>
+              <div class="team-pill-name">Sami</div>
+              <div class="team-pill-role">UI/UX Designer</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </aside>
+
+    <!-- RIGHT: THE REAL SMARTPHONE STAGE -->
+    <div class="phone-stage">
+      <div class="phone-chassis" id="phoneChassis">
+      
+      <!-- ANDROID ROOT VIEW (res/layout/activity_main.xml) -->
+      <div class="android-root" id="androidRoot" data-theme="light">
+        
+        <!-- STATUS BAR (GLOBAL SYSTEM-LEVEL BAR) -->
+        <div class="android-status-bar" id="androidStatusBar">
+          <span id="androidClock">9:41</span>
+          <div class="punch-hole-camera"></div>
+          <div class="status-right-icons">
+            <span>📶</span>
+            <span>5G</span>
+            <span>🔋</span>
+          </div>
+        </div>
+
+        <!-- MAIN ACTIVITY CONTENT -->
+        <div class="main-activity-content">
+          
+          <!-- HEADER: icon tile + "যাচাই" + settings 56dp button (lines 14-51 of activity_main.xml) -->
+          <header class="activity-header">
+            <div class="app-title-group">
+              <svg class="app-tile-icon" viewBox="0 0 256 256">
+                <path fill="var(--icon-tile)" d="M76,16H166.4A50,50 0 1,0 234.99,51.99A60,60 0 0,1 240,76V180A60,60 0 0,1 180,240H76A60,60 0 0,1 16,180V76A60,60 0 0,1 76,16Z"/>
+                <path fill="var(--icon-tile)" d="M156,62a30,30 0 1,0 60,0a30,30 0 1,0 -60,0"/>
+                <path fill="none" stroke="var(--icon-mark)" stroke-width="36" stroke-linecap="round" d="M140,128V164A42,42 0 0,1 98,206H92"/>
+              </svg>
+              <div class="app-name-text" data-i18n="appName">যাচাই</div>
+            </div>
+
+            <button class="btn-header-round" id="btnOpenSettings" title="Settings">
+              <svg viewBox="0 0 24 24"><path fill="currentColor" d="M19.14,12.94c0.04,-0.3 0.06,-0.61 0.06,-0.94c0,-0.32 -0.02,-0.64 -0.07,-0.94l2.03,-1.58c0.18,-0.14 0.23,-0.41 0.12,-0.61l-1.92,-3.32c-0.12,-0.22 -0.37,-0.29 -0.59,-0.22l-2.39,0.96c-0.5,-0.38 -1.03,-0.7 -1.62,-0.94L14.4,2.81c-0.04,-0.24 -0.24,-0.41 -0.48,-0.41h-3.84c-0.24,0 -0.43,0.17 -0.47,0.41L9.25,5.35C8.66,5.59 8.12,5.92 7.63,6.29L5.24,5.33c-0.22,-0.08 -0.47,0 -0.59,0.22L2.74,8.87c-0.12,0.21 -0.08,0.47 0.12,0.61l2.03,1.58C4.84,11.36 4.8,11.69 4.8,12s0.02,0.64 0.07,0.94l-2.03,1.58c-0.18,0.14 -0.23,0.41 -0.12,0.61l1.92,3.32c0.12,0.22 0.37,0.29 0.59,0.22l2.39,-0.96c0.5,0.38 1.03,0.7 1.62,0.94l0.36,2.54c0.05,0.24 0.24,0.41 0.48,0.41h3.84c0.24,0 0.44,-0.17 0.47,-0.41l0.36,-2.54c0.59,-0.24 1.13,-0.56 1.62,-0.94l2.39,0.96c0.22,0.08 0.47,0 0.59,-0.22l1.92,-3.32c0.12,-0.22 0.07,-0.47 -0.12,-0.61L19.14,12.94zM12,15.6c-1.98,0 -3.6,-1.62 -3.6,-3.6s1.62,-3.6 3.6,-3.6s3.6,1.62 3.6,3.6S13.98,15.6 12,15.6z"/></svg>
+            </button>
+          </header>
+
+          <!-- PAGES CONTAINER (lines 53-77 of activity_main.xml) -->
+          <div class="pages-container">
+            
+            <!-- ---------------------------------------------------- -->
+            <!-- PAGE 0: page_text.xml                                -->
+            <!-- ---------------------------------------------------- -->
+            <div class="page-scrollview active" id="pageText">
+              
+              <!-- Greeting Hero Card (lines 15-71 of page_text.xml) -->
+              <div class="hero-card">
+                <svg class="hero-watermark-shield" viewBox="0 0 24 24">
+                  <path fill="currentColor" d="M12,1L3,5v6c0,5.55 3.84,10.74 9,12 5.16,-1.26 9,-6.45 9,-12V5l-9,-4zM10,17l-4,-4 1.41,-1.41L10,14.17l6.59,-6.59L18,9l-8,8z"/>
+                </svg>
+                <div class="hero-greeting" id="heroGreeting" data-i18n="heroGreeting">শুভ সকাল</div>
+                <div class="hero-subtitle" data-i18n="heroSubtitle">কোনো মেসেজ নিয়ে সন্দেহ? ফরোয়ার্ড করার আগে যাচাই করুন।</div>
+                <div class="hero-stats-pill">
+                  <span>🛡️</span>
+                  <span id="heroStatsText">এ পর্যন্ত ৪টি যাচাই সম্পন্ন</span>
+                </div>
+              </div>
+
+              <!-- Text.Title (line 74) -->
+              <div class="text-section-title" data-i18n="textSectionTitle">লেখা যাচাই করুন</div>
+
+              <!-- Big Input Box (lines 82-130) -->
+              <div class="textbox-frame">
+                <textarea id="claimTextInput" class="native-edit-text" placeholder="এখানে মেসেজটি পেস্ট করুন বা লিখুন…" data-i18n-placeholder="claimPlaceholder"></textarea>
+                
+                <button class="btn-paste-inside" id="btnPasteText">
+                  <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M19,2h-4.18C14.4,0.84 13.3,0 12,0S9.6,0.84 9.18,2H5C3.9,2 3,2.9 3,4v16c0,1.1 0.9,2 2,2h14c1.1,0 2,-0.9 2,-2V4C21,2.9 20.1,2 19,2zM12,2c0.55,0 1,0.45 1,1s-0.45,1 -1,1s-1,-0.45 -1,-1S11.45,2 12,2zM19,20H5V4h2v3h10V4h2V20z"/></svg>
+                  <span data-i18n="btnPaste">পেস্ট</span>
+                </button>
+
+                <button class="btn-clear-inside" id="btnClearText" title="Clear">
+                  <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M19,6.41L17.59,5 12,10.59 6.41,5 5,6.41 10.59,12 5,17.59 6.41,19 12,13.41 17.59,19 19,17.59 13.41,12 19,6.41z"/></svg>
+                </button>
+              </div>
+
+              <!-- Big Check Button (lines 132-139) -->
+              <button class="btn-primary-material" id="btnCheckText">
+                <svg viewBox="0 0 24 24" width="26" height="26"><path fill="currentColor" d="M12,1L3,5v6c0,5.55 3.84,10.74 9,12 5.16,-1.26 9,-6.45 9,-12V5l-9,-4zM10,17l-4,-4 1.41,-1.41L10,14.17l6.59,-6.59L18,9l-8,8z"/></svg>
+                <span data-i18n="btnCheck">যাচাই করুন</span>
+              </button>
+
+              <!-- Other Ways Section (lines 142-228) -->
+              <div class="text-section-header" data-i18n="otherWays">যাচাইয়ের অন্য উপায়</div>
+              <div class="tiles-grid">
+                <div class="action-tile" id="tileMedia">
+                  <div class="tile-icon-square">
+                    <svg viewBox="0 0 24 24" width="26" height="26"><path fill="currentColor" d="M21,19V5c0,-1.1 -0.9,-2 -2,-2H5c-1.1,0 -2,0.9 -2,2v14c0,1.1 0.9,2 2,2h14c1.1,0 2,-0.9 2,-2zM8.5,13.5l2.5,3.01L14.5,12l4.5,6H5l3.5,-4.5z"/></svg>
+                  </div>
+                  <div class="tile-title" data-i18n="tileMediaTitle">ছবি বা ভিডিও</div>
+                  <div class="tile-subtitle" data-i18n="tileMediaSub">আসল নাকি এআই-তৈরি?</div>
+                </div>
+
+                <div class="action-tile" id="tileBubble">
+                  <div class="tile-icon-square">
+                    <svg viewBox="0 0 24 24" width="26" height="26"><circle cx="7.2" cy="14.4" r="3.2" fill="currentColor"/><circle cx="14.8" cy="18" r="2" fill="currentColor"/><circle cx="15.2" cy="8.8" r="4.8" fill="currentColor"/></svg>
+                  </div>
+                  <div class="tile-title" data-i18n="tileBubbleTitle">ভাসমান বাবল</div>
+                  <div class="tile-subtitle" data-i18n="tileBubbleSub">যেকোনো অ্যাপে পোস্ট যাচাই</div>
+                </div>
+              </div>
+
+              <!-- Tip row (lines 231-254) -->
+              <div class="tip-row">
+                <svg viewBox="0 0 24 24" width="22" height="22" style="flex-shrink: 0;"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                <div data-i18n="tipShareSheet">টিপস: হোয়াটসঅ্যাপ বা ফেসবুকে শেয়ার চেপে Jachai বেছে নিলে সরাসরি পোস্ট যাচাই করা যায়।</div>
+              </div>
+
+            </div>
+
+            <!-- ---------------------------------------------------- -->
+            <!-- PAGE 1: page_media.xml                               -->
+            <!-- ---------------------------------------------------- -->
+            <div class="page-scrollview" id="pageMedia">
+              
+              <div class="text-section-title" data-i18n="mediaTitle">আপলোড</div>
+              <div style="font-size: 18px; color: var(--text-primary); margin-top: 6px; line-height: 1.15;" data-i18n="mediaSubtitle">
+                ছবি বা ভিডিওটি আসল নাকি এআই দিয়ে তৈরি, জেনে নিন।
+              </div>
+
+              <!-- Big Tile 1: Photo (lines 29-77) -->
+              <div class="media-big-tile" id="btnPickPhoto">
+                <div class="media-tile-icon-square">
+                  <svg viewBox="0 0 24 24" width="34" height="34"><path fill="currentColor" d="M21,19V5c0,-1.1 -0.9,-2 -2,-2H5c-1.1,0 -2,0.9 -2,2v14c0,1.1 0.9,2 2,2h14c1.1,0 2,-0.9 2,-2zM8.5,13.5l2.5,3.01L14.5,12l4.5,6H5l3.5,-4.5z"/></svg>
+                </div>
+                <div class="media-tile-texts">
+                  <div class="media-tile-title" data-i18n="mediaPhotoTitle">ছবি বেছে নিন</div>
+                  <div class="media-tile-sub" data-i18n="mediaPhotoSub">আপনার গ্যালারি থেকে</div>
+                </div>
+                <svg viewBox="0 0 24 24" width="28" height="28" style="color: var(--text-muted);"><path fill="currentColor" d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+              </div>
+
+              <!-- Big Tile 2: Video (lines 79-127) -->
+              <div class="media-big-tile" id="btnPickVideo">
+                <div class="media-tile-icon-square">
+                  <svg viewBox="0 0 24 24" width="34" height="34"><path fill="currentColor" d="M17,10.5V7c0,-0.55 -0.45,-1 -1,-1H4c-0.55,0 -1,0.45 -1,1v10c0,0.55 0.45,1 1,1h12c0.55,0 1,-0.45 1,-1v-3.5l4,4v-11l-4,4z"/></svg>
+                </div>
+                <div class="media-tile-texts">
+                  <div class="media-tile-title" data-i18n="mediaVideoTitle">ভিডিও বেছে নিন</div>
+                  <div class="media-tile-sub" data-i18n="mediaVideoSub">সর্বোচ্চ ৫০ MB</div>
+                </div>
+                <svg viewBox="0 0 24 24" width="28" height="28" style="color: var(--text-muted);"><path fill="currentColor" d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+              </div>
+
+              <!-- What Jachai Spots Section (lines 129-139) -->
+              <div class="text-section-header" data-i18n="spotTitle">Jachai যা ধরতে পারে</div>
+              <div class="info-rows-card">
+                <div class="info-row-item">
+                  <div class="info-row-icon-box">
+                    <svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M21,19V5c0,-1.1 -0.9,-2 -2,-2H5c-1.1,0 -2,0.9 -2,2v14c0,1.1 0.9,2 2,2h14c1.1,0 2,-0.9 2,-2zM8.5,13.5l2.5,3.01L14.5,12l4.5,6H5l3.5,-4.5z"/></svg>
+                  </div>
+                  <div class="info-row-text" data-i18n="spotPhoto">এআই দিয়ে তৈরি বা এডিট করা ছবি</div>
+                </div>
+
+                <div class="info-row-item">
+                  <div class="info-row-icon-box">
+                    <svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M17,10.5V7c0,-0.55 -0.45,-1 -1,-1H4c-0.55,0 -1,0.45 -1,1v10c0,0.55 0.45,1 1,1h12c0.55,0 1,-0.45 1,-1v-3.5l4,4v-11l-4,4z"/></svg>
+                  </div>
+                  <div class="info-row-text" data-i18n="spotVideo">ডিপফেক ভিডিও</div>
+                </div>
+
+                <div class="info-row-item">
+                  <div class="info-row-icon-box">
+                    <svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg>
+                  </div>
+                  <div class="info-row-text" data-i18n="spotScreens">ভুয়া খবরের পোস্টের স্ক্রিনশট</div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- ---------------------------------------------------- -->
+            <!-- PAGE 2: page_bubble.xml                              -->
+            <!-- ---------------------------------------------------- -->
+            <div class="page-scrollview" id="pageBubble">
+              
+              <div class="text-section-title" data-i18n="bubbleTitle">ভাসমান বাবল</div>
+              <div style="font-size: 18px; color: var(--text-primary); margin-top: 6px; line-height: 1.25;" data-i18n="bubbleIntro">
+                Jachai-কে স্ক্রিনে রেখে দ্রুত পোস্ট ও মেসেজ যাচাই করুন, এমনকি যেগুলো শেয়ার করা যায় না সেগুলোও।
+              </div>
+
+              <!-- Switch Card with BigToggle.java (lines 29-57) -->
+              <div class="big-switch-card">
+                <div class="big-toggle-component" id="bigBubbleToggle">
+                  <div class="big-toggle-thumb" id="bigBubbleThumb">বন্ধ</div>
+                </div>
+                <div class="big-toggle-status-text" id="bubbleStatusText">
+                  বাবল বন্ধ আছে।
+                </div>
+
+                <button class="btn-primary-material" id="btnTestInWhatsApp" style="display: none; margin-top: 18px; min-height: 54px; font-size: 17px;">
+                  <span>💬</span>
+                  <span data-i18n="btnTestWa">WhatsApp চ্যাটে বাবল পরীক্ষা করুন</span>
+                </button>
+              </div>
+
+              <!-- How it works (lines 59-68) -->
+              <div class="text-section-header" data-i18n="bubbleHow">কীভাবে কাজ করে</div>
+              <div class="steps-card">
+                <div class="step-item-row">
+                  <div class="step-indicator-col">
+                    <div class="step-number-bubble" data-i18n="stepNum1">১</div>
+                    <div class="step-vertical-line"></div>
+                  </div>
+                  <div class="step-content-text" data-i18n="bubbleStep1">বাবল চালু করুন।</div>
+                </div>
+
+                <div class="step-item-row">
+                  <div class="step-indicator-col">
+                    <div class="step-number-bubble" data-i18n="stepNum2">২</div>
+                    <div class="step-vertical-line"></div>
+                  </div>
+                  <div class="step-content-text" data-i18n="bubbleStep2">স্বাভাবিকভাবে ফোন ব্যবহার করুন।</div>
+                </div>
+
+                <div class="step-item-row">
+                  <div class="step-indicator-col">
+                    <div class="step-number-bubble" data-i18n="stepNum3">৩</div>
+                  </div>
+                  <div class="step-content-text" data-i18n="bubbleStep3">কোনো পোস্ট বা মেসেজ সন্দেহজনক মনে হলে বাবলে ট্যাপ করুন। Jachai স্ক্রিনে যা আছে তা যাচাই করবে।</div>
+                </div>
+              </div>
+
+              <!-- Close hint (lines 70-92) -->
+              <div class="tip-row">
+                <svg viewBox="0 0 24 24" width="22" height="22" style="flex-shrink: 0;"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                <div data-i18n="bubbleCloseHint">বাবল বন্ধ করতে সেটি চেপে ধরে রাখুন।</div>
+              </div>
+
+            </div>
+
+            <!-- ---------------------------------------------------- -->
+            <!-- PAGE 3: page_profile.xml                             -->
+            <!-- ---------------------------------------------------- -->
+            <div class="page-scrollview" id="pageProfile">
+              
+              <!-- Guest Header (lines 15-81) -->
+              <div class="profile-guest-header">
+                <div class="profile-avatar-frame">
+                  <svg viewBox="0 0 24 24" width="44" height="44"><path fill="currentColor" d="M12,12c2.21,0 4,-1.79 4,-4s-1.79,-4 -4,-4 -4,1.79 -4,4 1.79,4 4,4zM12,14c-2.67,0 -8,1.34 -8,4v2h16v-2c0,-2.66 -5.33,-4 -8,-4z"/></svg>
+                  <div class="profile-avatar-add">+</div>
+                </div>
+                <div>
+                  <div class="profile-guest-title" data-i18n="profileGuest">অতিথি</div>
+                  <div class="profile-pill-tag" data-i18n="profileComingSoon">অ্যাকাউন্ট শীঘ্রই আসছে</div>
+                </div>
+              </div>
+
+              <!-- Activity stats -->
+              <div class="text-section-header" data-i18n="profileActivity">আপনার কার্যক্রম</div>
+              <div class="activity-stats-row">
+                <div class="stat-box">
+                  <div class="stat-count" id="statTotalChecks">৪</div>
+                  <div class="stat-label" data-i18n="statChecks">মোট যাচাই</div>
+                </div>
+                <div class="stat-box">
+                  <div class="stat-count" style="color: var(--status-bad);" data-i18n="statFakesCount">২</div>
+                  <div class="stat-label" data-i18n="statFakes">ভুয়া ধরা পড়েছে</div>
+                </div>
+                <div class="stat-box">
+                  <div class="stat-count" style="color: var(--status-ok);" data-i18n="statRealCount">২</div>
+                  <div class="stat-label" data-i18n="statReal">আসল মনে হয়েছে</div>
+                </div>
+              </div>
+
+              <!-- WeekBars 7-day chart -->
+              <div class="text-section-header" data-i18n="profileWeek">গত ৭ দিন</div>
+              <div class="weekbars-card">
+                <div class="weekbars-chart">
+                  <div class="weekbar-col"><div class="weekbar-fill" style="height: 25px;"></div><div class="weekbar-day" data-i18n="daySat">শনি</div></div>
+                  <div class="weekbar-col"><div class="weekbar-fill" style="height: 45px;"></div><div class="weekbar-day" data-i18n="daySun">রবি</div></div>
+                  <div class="weekbar-col"><div class="weekbar-fill" style="height: 15px;"></div><div class="weekbar-day" data-i18n="dayMon">সোম</div></div>
+                  <div class="weekbar-col"><div class="weekbar-fill" style="height: 60px;"></div><div class="weekbar-day" data-i18n="dayTue">মঙ্গল</div></div>
+                  <div class="weekbar-col"><div class="weekbar-fill" style="height: 35px;"></div><div class="weekbar-day" data-i18n="dayWed">বুধ</div></div>
+                  <div class="weekbar-col"><div class="weekbar-fill" style="height: 50px;"></div><div class="weekbar-day" data-i18n="dayThu">বৃহঃ</div></div>
+                  <div class="weekbar-col"><div class="weekbar-fill" style="height: 70px;"></div><div class="weekbar-day" data-i18n="dayFri">শুক্র</div></div>
+                </div>
+                <div style="font-size: 13px; color: var(--text-muted); text-align: center;" data-i18n="statsPrivate">
+                  শুধু এই ফোনেই গোনা হয়। কোনো তথ্য সার্ভারে সংরক্ষিত হয় না।
+                </div>
+              </div>
+
+              <!-- Recent checks list (item_recent.xml) -->
+              <div class="text-section-header" data-i18n="profileRecent">সাম্প্রতিক যাচাই</div>
+              <div class="recent-list-card">
+                <div class="recent-row" onclick="runPreset('padma')">
+                  <div class="recent-icon-circle">
+                    <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M19,3H5C3.9,3 3,3.9 3,5v14c0,1.1 0.9,2 2,2h14c1.1,0 2,-0.9 2,-2V5C21,3.9 20.1,3 19,3zM14,17H7v-2h7V17zM17,13H7v-2h10V13zM17,9H7V7h10V9z"/></svg>
+                  </div>
+                  <div class="recent-info-col">
+                    <div class="recent-title-text" data-i18n="recentPadma">পদ্মা সেতু নির্মাণে মানুষের মাথা লাগবে…</div>
+                    <div class="recent-meta-text">
+                      <span class="verdict-tag-pill red" data-i18n="recentFake">সম্ভবত ভুয়া</span>
+                      <span data-i18n="recentJustNow">• এইমাত্র</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="recent-row" onclick="runPreset('deepfake')">
+                  <div class="recent-icon-circle">
+                    <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M21,19V5c0,-1.1 -0.9,-2 -2,-2H5c-1.1,0 -2,0.9 -2,2v14c0,1.1 0.9,2 2,2h14c1.1,0 2,-0.9 2,-2zM8.5,13.5l2.5,3.01L14.5,12l4.5,6H5l3.5,-4.5z"/></svg>
+                  </div>
+                  <div class="recent-info-col">
+                    <div class="recent-title-text" data-i18n="recentAiPortrait">AI জেনারেটেড পোর্ট্রেট (পুরুষ)</div>
+                    <div class="recent-meta-text">
+                      <span class="verdict-tag-pill red" data-i18n="recentFake">সম্ভবত ভুয়া</span>
+                      <span data-i18n="recentTenMinAgo">• ১০ মিনিট আগে</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="recent-row" onclick="runPreset('real')">
+                  <div class="recent-icon-circle">
+                    <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M19,3H5C3.9,3 3,3.9 3,5v14c0,1.1 0.9,2 2,2h14c1.1,0 2,-0.9 2,-2V5C21,3.9 20.1,3 19,3zM14,17H7v-2h7V17zM17,13H7v-2h10V13zM17,9H7V7h10V9z"/></svg>
+                  </div>
+                  <div class="recent-info-col">
+                    <div class="recent-title-text" data-i18n="recentRain">আজ সকাল থেকে ঢাকায় হালকা বৃষ্টিপাত…</div>
+                    <div class="recent-meta-text">
+                      <span class="verdict-tag-pill green" data-i18n="recentReal">আসল মনে হচ্ছে</span>
+                      <span data-i18n="recentYesterday">• গতকাল</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Family share card -->
+              <div class="family-share-card">
+                <div style="font-size: 20px; font-weight: 700; color: var(--text-primary);" data-i18n="shareCardTitle">পরিবারকে নিরাপদ রাখুন</div>
+                <div style="font-size: 16px; color: var(--text-muted); margin-top: 6px; line-height: 1.25;" data-i18n="shareCardBody">
+                  পরিচিত কেউ কি সবকিছু ফরোয়ার্ড করেন? তাঁদের সাথে Jachai শেয়ার করুন।
+                </div>
+                <button class="btn-primary-material" style="margin-top: 14px; min-height: 52px; font-size: 17px;" onclick="shareJachaiApp()" data-i18n="btnShareApp">
+                  Jachai শেয়ার করুন
+                </button>
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- FLOATINGNAVBAR.JAVA REPRODUCTION (lines 80-87 of activity_main.xml) -->
+          <nav class="floating-navbar" id="floatingNavBar">
+            <button class="nav-tab-item active" data-tab="0">
+              <svg viewBox="0 0 24 24"><path fill="currentColor" d="M19,3H5C3.9,3 3,3.9 3,5v14c0,1.1 0.9,2 2,2h14c1.1,0 2,-0.9 2,-2V5C21,3.9 20.1,3 19,3zM14,17H7v-2h7V17zM17,13H7v-2h10V13zM17,9H7V7h10V9z"/></svg>
+              <span class="nav-tab-label" data-i18n="navText">লেখা</span>
+            </button>
+
+            <button class="nav-tab-item" data-tab="1">
+              <svg viewBox="0 0 24 24"><path fill="currentColor" d="M21,19V5c0,-1.1 -0.9,-2 -2,-2H5c-1.1,0 -2,0.9 -2,2v14c0,1.1 0.9,2 2,2h14c1.1,0 2,-0.9 2,-2zM8.5,13.5l2.5,3.01L14.5,12l4.5,6H5l3.5,-4.5z"/></svg>
+              <span class="nav-tab-label" data-i18n="navMedia">মিডিয়া</span>
+            </button>
+
+            <button class="nav-tab-item" data-tab="2">
+              <svg viewBox="0 0 24 24"><circle cx="7.2" cy="14.4" r="3.2" fill="currentColor"/><circle cx="14.8" cy="18" r="2" fill="currentColor"/><circle cx="15.2" cy="8.8" r="4.8" fill="currentColor"/></svg>
+              <span class="nav-tab-label" data-i18n="navBubble">বাবল</span>
+            </button>
+
+            <button class="nav-tab-item" data-tab="3">
+              <svg viewBox="0 0 24 24"><path fill="currentColor" d="M12,12c2.21,0 4,-1.79 4,-4s-1.79,-4 -4,-4 -4,1.79 -4,4 1.79,4 4,4zM12,14c-2.67,0 -8,1.34 -8,4v2h16v-2c0,-2.66 -5.33,-4 -8,-4z"/></svg>
+              <span class="nav-tab-label" data-i18n="navProfile">প্রোফাইল</span>
+            </button>
+          </nav>
+
+        </div>
+
+        <!-- --------------------------------------------------------- -->
+        <!-- ACTIVITY_VERDICT.XML (FULL SCREEN RESULT ACTIVITY)        -->
+        <!-- --------------------------------------------------------- -->
+        <div class="verdict-activity-screen" id="verdictActivity">
+          
+          <!-- 1. LOADING GROUP (lines 11-66 of activity_verdict.xml) -->
+          <div class="verdict-loading-view" id="verdictLoadingView">
+            <div class="loading-shield-circle">
+              <svg viewBox="0 0 24 24" width="56" height="56"><path fill="currentColor" d="M12,1L3,5v6c0,5.55 3.84,10.74 9,12 5.16,-1.26 9,-6.45 9,-12V5l-9,-4zM10,17l-4,-4 1.41,-1.41L10,14.17l6.59,-6.59L18,9l-8,8z"/></svg>
+            </div>
+            <div class="loading-title-bn">যাচাই করা হচ্ছে…</div>
+            <div class="loading-title-en">Checking…</div>
+
+            <div class="material-progress-track">
+              <div class="material-progress-bar"></div>
+            </div>
+
+            <div class="loading-rotating-tip" id="loadingTipText">
+              পরিচিত গুজবের সাথে মেলানো হচ্ছে…<br>Checking against known hoaxes…
+            </div>
+          </div>
+
+          <!-- 2. RESULT GROUP (lines 69-318 of activity_verdict.xml) -->
+          <div class="verdict-result-view" id="verdictResultView">
+            
+            <!-- Scrollable Result Body (Holds Hero + Certainty + Advice + Why + Share) -->
+            <div class="verdict-scroll-body" id="verdictScrollBody">
+              
+              <!-- Result Hero (lines 92-136 of activity_verdict.xml) -->
+              <div class="verdict-hero-banner" id="verdictHeroBanner">
+                <div class="verdict-icon-circle" id="verdictIconCircle">
+                  <svg viewBox="0 0 24 24" width="56" height="56" id="verdictHeroSvg"><path fill="#FFFFFF" d="M12,2C6.47,2 2,6.47 2,12s4.47,10 10,10 10,-4.47 10,-10S17.53,2 12,2zM17,15.59L15.59,17 12,13.41 8.41,17 7,15.59 10.59,12 7,8.41 8.41,7 12,10.59 15.59,7 17,8.41 13.41,12 17,15.59z"/></svg>
+                </div>
+
+                <div class="verdict-title-bn" id="verdictTitleBn">সম্ভবত ভুয়া / এআই-তৈরি</div>
+                <div class="verdict-title-en" id="verdictTitleEn">Likely fake / AI-generated</div>
+              </div>
+
+              <!-- Overlapping Certainty Card (lines 140-189) -->
+              <div class="certainty-overlap-card" id="certaintyCard">
+                <div class="certainty-header-text">কতটা নিশ্চিত? · How sure?</div>
+                <div class="certainty-word-row">
+                  <div class="certainty-word-text" id="certaintyWordText">খুবই নিশ্চিত · Very sure</div>
+                  <div class="certainty-percent-label" id="certaintyPercentLabel">96%</div>
+                </div>
+                <div class="confidence-progress-track">
+                  <div class="confidence-progress-fill" id="confidenceBarFill" style="width: 96%;"></div>
+                </div>
+              </div>
+
+              <!-- Advice Card (lines 193-228) -->
+              <div class="verdict-advice-card" id="adviceCard">
+                <svg viewBox="0 0 24 24" width="30" height="30" style="color: var(--verdict-red); flex-shrink: 0;" id="adviceIcon"><path fill="currentColor" d="M1,21h22L12,2 1,21zM13,18h-2v-2h2v2zM13,14h-2v-4h2v4z"/></svg>
+                <div>
+                  <div class="advice-title">এখন কী করবেন? · What to do</div>
+                  <div class="advice-body" id="verdictAdviceBody">এটি ফরোয়ার্ড করবেন না। বিশ্বস্ত সংবাদমাধ্যমে মিলিয়ে দেখুন。<br><span style="color: var(--text-muted); font-size: 13.5px;">Don't forward this. Check it with a trusted news source.</span></div>
+                </div>
+              </div>
+
+              <!-- Why Card (lines 232-270) -->
+              <div class="verdict-why-card" id="whyCard">
+                <div class="why-title">কেন? · Why?</div>
+                <div class="explanation-bn" id="verdictExplanationBn">
+                  পুলিশ ও সেতু কর্তৃপক্ষ একে ভিত্তিহীন গুজব বলেছে। ২০১৯ সালে এই গুজবে নিরপরাধ মানুষকে গণপিটুনি দেওয়া হয়েছিল।
+                </div>
+                <div class="explanation-en" id="verdictExplanationEn">
+                  Police and the bridge authority called this a baseless rumour. In 2019 it led to mob beatings of innocent people.
+                </div>
+                <div class="verdict-claim-detail" id="verdictClaimDetail"></div>
+              </div>
+
+              <!-- Share Result Secondary Button (lines 274-285 of activity_verdict.xml) -->
+              <button type="button" class="btn-verdict-share" id="btnShareResult">
+                <svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M18,16.08c-0.76,0 -1.44,0.3 -1.96,0.77L8.91,12.7c0.05,-0.23 0.09,-0.46 0.09,-0.7s-0.04,-0.47 -0.09,-0.7l7.05,-4.11c0.54,0.5 1.25,0.81 2.04,0.81 1.66,0 3,-1.34 3,-3s-1.34,-3 -3,-3 -3,1.34 -3,3c0,0.24 0.04,0.47 0.09,0.7L8.04,9.81C7.5,9.31 6.79,9 6,9c-1.66,0 -3,1.34 -3,3s1.34,3 3,3c0.79,0 1.5,-0.31 2.04,-0.81l7.12,4.16c-0.05,0.21 -0.08,0.43 -0.08,0.65 0,1.61 1.31,2.92 2.92,2.92 1.61,0 2.92,-1.31 2.92,-2.92s-1.31,-2.92 -2.92,-2.92z"/></svg>
+                <span data-i18n="btnVerdictShare">Share · শেয়ার</span>
+              </button>
+
+              <div style="height: 18px; flex-shrink: 0;"></div>
+            </div>
+
+            <!-- Pinned Bottom Action Bar (MATCHING REAL ANDROID button_bar lines 289-317) -->
+            <div class="verdict-bottom-bar" id="verdictBottomBar">
+              <button class="btn-primary-material" id="btnDoneVerdict" style="min-height: 54px; font-size: 19px; margin: 0; box-shadow: none;">
+                <span data-i18n="btnVerdictDone">Done · ঠিক আছে</span>
+              </button>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- --------------------------------------------------------- -->
+        <!-- ACTIVITY_SETTINGS.XML (SETTINGS ACTIVITY)                 -->
+        <!-- --------------------------------------------------------- -->
+        <div class="settings-activity-screen" id="settingsActivity">
+          
+          <!-- Top bar with Back Button & Title -->
+          <div class="settings-top-header">
+            <button class="btn-settings-back" id="btnCloseSettings">
+              <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M20,11H7.83l5.59,-5.59L12,4l-8,8 8,8 1.41,-1.41L7.83,13H20v-2z"/></svg>
+              <span data-i18n="btnBack">ফিরে যান</span>
+            </button>
+            <div class="settings-header-title" data-i18n="settingsTitle">সেটিংস</div>
+          </div>
+
+          <div class="settings-scroll-body">
+            
+            <!-- Appearance -->
+            <div class="text-section-header" style="margin-top: 14px;" data-i18n="setAppearance">চেহারা (Theme)</div>
+            <div class="segmented-toggle-group">
+              <button class="segment-item-btn active" id="btnThemeLight">
+                <svg viewBox="0 0 24 24" width="20" height="20" style="flex-shrink: 0;"><path fill="currentColor" d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41s-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41s-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/></svg>
+                <span data-i18n="themeLight">হালকা</span>
+              </button>
+              <button class="segment-item-btn" id="btnThemeDark">
+                <svg viewBox="0 0 24 24" width="20" height="20" style="flex-shrink: 0;"><path fill="currentColor" d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/></svg>
+                <span data-i18n="themeDark">গাঢ়</span>
+              </button>
+            </div>
+
+            <!-- Language -->
+            <div class="text-section-header" data-i18n="setLanguage">ভাষা (Language)</div>
+            <div class="segmented-toggle-group">
+              <button class="segment-item-btn" id="btnLangEn" onclick="setLanguage('en')"><span onclick="setLanguage('en')">English</span></button>
+              <button class="segment-item-btn active" id="btnLangBn" onclick="setLanguage('bn')"><span onclick="setLanguage('bn')">বাংলা</span></button>
+            </div>
+
+            <!-- Text Size -->
+            <div class="text-section-header" data-i18n="setTextSize">লেখার আকার (Font Size)</div>
+            <div class="segmented-toggle-group">
+              <button class="segment-item-btn font-size-btn" data-scale="0.88"><span data-i18n="sizeSmall">ছোট</span></button>
+              <button class="segment-item-btn font-size-btn active" data-scale="1"><span data-i18n="sizeMedium">মাঝারি</span></button>
+              <button class="segment-item-btn font-size-btn" data-scale="1.15"><span data-i18n="sizeLarge">বড়</span></button>
+            </div>
+            <div class="size-preview-box" id="sizePreviewBox" data-i18n="sizePreview">
+              অআ · লেখা এমন দেখাবে।
+            </div>
+
+            <!-- Alerts (switch_vibrate) -->
+            <div class="text-section-header" data-i18n="setAlerts">সতর্কতা (Alerts)</div>
+            <div style="background: var(--surface); border: 1px solid var(--outline); border-radius: 18px; padding: 14px 16px; display: flex; align-items: center; justify-content: space-between;">
+              <div style="padding-right: 12px;">
+                <div style="font-size: 15px; font-weight: 700; color: var(--text-primary);" data-i18n="setVibrate">ভুয়া ধরা পড়লে ভাইব্রেট করুন</div>
+                <div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;" data-i18n="setVibrateSub">ফোন দুবার কাঁপবে যাতে খেয়াল করেন</div>
+              </div>
+              <label class="switch-toggle-wrap">
+                <input type="checkbox" id="switchVibrate" checked>
+                <span class="switch-slider"></span>
+              </label>
+            </div>
+
+            <!-- Server Status -->
+            <div class="text-section-header" data-i18n="sectionServer">সার্ভার সংযোগ</div>
+            <div style="background: var(--surface); border: 1px solid var(--outline); border-radius: 18px; padding: 14px; display: flex; align-items: center; justify-content: space-between;">
+              <div>
+                <div style="font-size: 15px; font-weight: 700; color: var(--text-primary);" data-i18n="serverConnected">সংযুক্ত (v2.0.0)</div>
+                <div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;" data-i18n="serverSub">লোকাল হাইব্রিড ফ্যাক্ট-চেক ডাটাবেস</div>
+              </div>
+              <div style="width: 12px; height: 12px; border-radius: 50%; background: var(--status-ok);"></div>
+            </div>
+
+            <!-- About -->
+            <div class="text-section-header" data-i18n="setAbout">সম্পর্কে</div>
+            <div style="background: var(--surface); border: 1px solid var(--outline); border-radius: 18px; padding: 14px; font-size: 13px; color: var(--text-muted); line-height: 1.45;" data-i18n="aboutBody">
+              Jachai সংস্করণ ২.০.০<br>
+              প্রবীণ ও সাধারণ পরিবারকে সামাজিক গুজব ও ভায়োলেন্স থেকে সুরক্ষিত রাখার জন্য নিবেদিত ওপেন-সোর্স এআই উদ্যোগ।
+            </div>
+
+            <div style="height: 24px;"></div>
+          </div>
+
+        </div>
+
+        <!-- --------------------------------------------------------- -->
+        <!-- REAL BUBBLE WIDGET & WHATSAPP INTERCEPTION                -->
+        <!-- --------------------------------------------------------- -->
+        <!-- Draggable Floating Bubble Overlay -->
+        <div class="real-bubble-widget" id="realBubbleWidget" title="Tap to scan screen">
+          <svg viewBox="0 0 256 256" style="width: 100%; height: 100%;">
+            <path fill="var(--icon-tile)" d="M76,16H166.4A50,50 0 1,0 234.99,51.99A60,60 0 0,1 240,76V180A60,60 0 0,1 180,240H76A60,60 0 0,1 16,180V76A60,60 0 0,1 76,16Z"/>
+            <path fill="var(--icon-tile)" d="M156,62a30,30 0 1,0 60,0a30,30 0 1,0 -60,0"/>
+            <path fill="none" stroke="var(--icon-mark)" stroke-width="36" stroke-linecap="round" d="M140,128V164A42,42 0 0,1 98,206H92"/>
+          </svg>
+        </div>
+
+        <!-- WhatsApp Chat Simulation Frame inside phone -->
+        <div class="whatsapp-chat-app" id="whatsappChatApp">
+          <div class="wa-top-bar">
+            <button class="wa-back-btn" id="btnExitWhatsApp">←</button>
+            <div style="font-size: 1.5rem;">👥</div>
+            <div>
+              <div style="font-weight: 700; font-size: 16px;" data-i18n="waGroupName">Family Group (আমরা সবাই)</div>
+              <div style="font-size: 12px; color: #8696A0;">Choto Chacha, Boro Apa, Mama...</div>
+            </div>
+          </div>
+
+          <div class="wa-msg-list">
+            <div class="wa-chat-bubble">
+              <div style="font-size: 12px; color: #53BDEB; font-weight: 700;">ছোট চাচা (Choto Chacha)</div>
+              <div style="margin-top: 4px;" data-i18n="waMsgChacha">🚨 <strong>জরুরি বার্তা সবাই সতর্ক থাকুন!!</strong> এলাকায় ভিক্ষুকের ছদ্মবেশে ছেলেধরা চক্র ঘুরছে, শিশুদের একদম একা বাইরে যেতে দেবেন না!! সবাইকে ফরোয়ার্ড করুন!!</div>
+              <div style="font-size: 11px; color: #8696A0; text-align: right; margin-top: 4px;">9:38 AM • Forwarded</div>
+            </div>
+
+            <div class="wa-chat-bubble">
+              <div style="font-size: 12px; color: #53BDEB; font-weight: 700;">বড় আপা (Boro Apa)</div>
+              <div style="margin-top: 4px;" data-i18n="waMsgApa">সত্যি নাকি এটা চাচা? আমি তো শিশুদের স্কুলে পাঠানো নিয়ে ভয় পাচ্ছি!</div>
+              <div style="font-size: 11px; color: #8696A0; text-align: right; margin-top: 4px;">9:40 AM</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Radar scan effect -->
+        <div class="screen-radar-line" id="screenRadarLine"></div>
+
+        <!-- --------------------------------------------------------- -->
+        <!-- ANDROID NATIVE MEDIA PICKER MODAL                         -->
+        <!-- --------------------------------------------------------- -->
+        <div class="native-media-dialog" id="nativeMediaDialog">
+          <div class="native-media-sheet">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+              <div style="font-size: 18px; font-weight: 700; color: var(--text-primary);" data-i18n="mediaPickerTitle">ছবি নির্বাচন করুন</div>
+              <button style="background: none; border: none; font-size: 18px; cursor: pointer; color: var(--text-muted);" id="btnCloseMediaPicker">✕</button>
+            </div>
+
+            <div style="font-size: 14px; color: var(--text-muted); margin-bottom: 12px;" data-i18n="mediaPickerSub">
+              পরীক্ষার জন্য একটি ছবি বেছে নিন অথবা কাস্টম ছবি আপলোড করুন:
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+              <div class="action-tile" style="padding: 10px;" onclick="runPreset('deepfake')">
+                <img src="samples/fake/ai-generated-8189352_1280.png" style="width: 100%; height: 70px; object-fit: cover; border-radius: 12px;">
+                <div style="font-size: 14px; font-weight: 700; color: var(--text-primary); margin-top: 6px;" data-i18n="mediaPresetDeepfake">AI ডিপফেক মুখ</div>
+              </div>
+
+              <div class="action-tile" style="padding: 10px;" onclick="runMediaCheck('samples/real/shaken-not-stirred-peter-ruck.jpg', 'real')">
+                <img src="samples/real/shaken-not-stirred-peter-ruck.jpg" style="width: 100%; height: 70px; object-fit: cover; border-radius: 12px;">
+                <div style="font-size: 14px; font-weight: 700; color: var(--text-primary); margin-top: 6px;" data-i18n="mediaPresetReal">আসল ক্যামেরা ছবি</div>
+              </div>
+            </div>
+
+            <input type="file" id="customFileInput" accept="image/*" style="display: none;">
+            <button class="btn-primary-material" style="margin-top: 14px; min-height: 52px; font-size: 16px;" onclick="document.getElementById('customFileInput').click()" data-i18n="btnUploadGallery">
+              📁 গ্যালারি থেকে ফাইল আপলোড
+            </button>
+          </div>
+        </div>
+
+        <!-- Native Android Toast notification pill -->
+        <div class="android-toast" id="androidToast"></div>
+
+        <!-- Android bottom gesture bar -->
+        <div class="android-gesture-bar"></div>
+
+      </div>
+    </div>
+    </div>
+
+  </main>
+
+  <script src="hoaxes.js?v=2.6"></script>
+  <script src="app.js?v=2.6"></script>
+</body>
+</html>

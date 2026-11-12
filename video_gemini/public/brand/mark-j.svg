@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <style>svg{--primary:#111111;--secondary:#F2F2F0;--bg:#FFFFFF;--accent:#8CA8F9}@media (prefers-color-scheme:dark){svg{--primary:#F5F5F4;--secondary:#1C1C1E;--bg:#0E0E0F;--accent:#8CA8F9}}svg.dark{--primary:#F5F5F4;--secondary:#1C1C1E;--bg:#0E0E0F;--accent:#8CA8F9}</style>
+  <!-- B2: the j whose dot is a speech bubble. In-app mark: headers, empty states, loading. -->
+  <path d="M150 18A32 32 0 1 1 132 76.5L112 86L119 66A32 32 0 0 1 150 18Z" style="fill:var(--accent)"/>
+  <path d="M150 120V170A52 52 0 0 1 98 222H94" fill="none" stroke-width="40" stroke-linecap="round" style="stroke:var(--primary)"/>
+</svg>
